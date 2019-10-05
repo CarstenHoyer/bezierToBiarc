@@ -1,0 +1,33 @@
+{
+  "name": "beziertobiarc",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --use Math=JSMath --runtime full --importMemory --sourceMap --debug --validate --measure --memoryBase 1024",
+    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat -d build/optimized.d.ts --use Math=JSMath --runtime full -O3 --importMemory --sourceMap --validate --measure",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
+    "start": "webpack-dev-server",
+    "build": "npm run asbuild && webpack-cli",
+    "test": "asp"
+  },
+  "devDependencies": {
+    "@as-pect/assembly": "^2.4.1",
+    "@as-pect/cli": "^2.4.1",
+    "@as-pect/core": "^2.4.1",
+    "@types/complex.js": "^2.0.1",
+    "@types/p5": "^0.9.0",
+    "assemblyscript": "github:AssemblyScript/assemblyscript",
+    "copy-webpack-plugin": "^5.0.4",
+    "http-server": "^0.11.1",
+    "p5": "^0.9.0",
+    "pson": "^2.0.0",
+    "ts-loader": "^6.0.4",
+    "wasm-loader": "^1.3.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "complex.js": "^2.0.11"
+  }
+}
