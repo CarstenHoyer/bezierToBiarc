@@ -8,7 +8,8 @@
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
     "start": "webpack-dev-server",
     "build": "npm run asbuild && webpack-cli",
-    "test": "asp"
+    "test": "asp",
+    "test:watch": "nodemon --exec \"yarn run test\""
   },
   "devDependencies": {
     "@as-pect/assembly": "^2.4.1",
@@ -19,6 +20,7 @@
     "assemblyscript": "github:AssemblyScript/assemblyscript",
     "copy-webpack-plugin": "^5.0.4",
     "http-server": "^0.11.1",
+    "nodemon": "^1.19.3",
     "p5": "^0.9.0",
     "pson": "^2.0.0",
     "ts-loader": "^6.0.4",
