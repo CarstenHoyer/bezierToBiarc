@@ -19,18 +19,15 @@ export function cubicBezierToBiarc(p: Float64Array, samplingStep: i8, tolerance:
   const i2 = isRealInflexionPoint(inflex[1]);
   
   if (i1 && !i2) {
-    console.logs('A')
     const splited = toSplit.split(inflex[0].re);
     curves.push(splited[0]);
     curves.push(splited[1]);
   } else if (!i1 && i2) {
-    console.logs('B')
     const splited = toSplit.split(inflex[1].re);
     curves.push(splited[0]);
     curves.push(splited[1]);
   } else if (i1 && i2) {
 
-    console.logs('C')
     let t1 = inflex[0].re;
     let t2 = inflex[1].re;
 
@@ -48,21 +45,8 @@ export function cubicBezierToBiarc(p: Float64Array, samplingStep: i8, tolerance:
     curves.push(splited2[0]);
     curves.push(splited2[1]);
   } else {
-    console.logs('D')
     curves.push(toSplit);
   }
-
-  // const nn = new Float64Array(curves.length * 4)
-  // nn[0] = curves.length
-  // let mm = 0
-  // for (let m = 0; m < curves.length; m++) {
-  //   const c = curves[m]
-  //   nn[mm++] = c.P1.x
-  //   nn[mm++] = c.P1.y 
-  //   nn[mm++] = c.P2.x
-  //   nn[mm++] = c.P2.y
-  // }
-  // console.log64a(nn)
 
   // Second, approximate the curves until we run out of them
   while (curves.length > 0) {
@@ -86,7 +70,6 @@ export function cubicBezierToBiarc(p: Float64Array, samplingStep: i8, tolerance:
     // Calculate the BiArc
     
     const biarc = new BiArc(bezier.P1, bezier.P1.sub(bezier.C1), bezier.P2, bezier.P2.sub(bezier.C2), G);
-  
     // ---------------------------------------------------------------------------
     // Calculate the maximum error
     
@@ -110,8 +93,8 @@ export function cubicBezierToBiarc(p: Float64Array, samplingStep: i8, tolerance:
 
     // Check if the two curves are close enough
     if (maxDistance > tolerance) {
-      // If not, split the bezier curve the point where the distance is the maximum
-      // and try again with the two halfs
+      // If not, split the bezier curve at the point where the distance is 
+      // the maximum and try again with the two halfs
       const bs = bezier.split(maxDistanceAt);
 
       curves.push(bs[0]);
