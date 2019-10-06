@@ -117,4 +117,11 @@ export class Complex {
     }
     return a * Math.sqrt(1 + b * b);
   }
+
+  toArray(): Float64Array {
+    const a = new Float64Array(2)
+    a[0] = this.im
+    a[1] = this.re
+    return a
+  }
 }

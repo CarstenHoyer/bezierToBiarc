@@ -71,4 +71,20 @@ export class BiArc {
       return this.A2.pointAt((t - s) / (1 - s));
     }
   }
+
+  toArray(): Float64Array {
+    const a1 = this.A1.toArray()
+    const a2 = this.A2.toArray()
+    const c = new Float64Array(a1.length + a2.length);
+    let offset = 0
+    for (let i = 0; i < a1.length; i++) {
+      c[offset] = a1[i]
+      offset++
+    }
+    for (let i = 0; i < a2.length; i++) {
+      c[offset] = a2[i]
+      offset++
+    }
+    return c
+  }
 }

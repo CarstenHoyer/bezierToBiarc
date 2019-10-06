@@ -29,4 +29,15 @@ export class Arc {
     const y = this.C.y + this.r * Math.sin(this.startAngle + t * this.sweepAngle);
     return new Point(x, y);
   }
+
+  toArray(): Float64Array {
+    const a = new Float64Array(6)
+    a[0] = this.startAngle
+    a[1] = this.sweepAngle
+    a[2] = this.C.x
+    a[3] = this.C.y
+    a[4] = this.r
+    a[5] = this.cw ? 1 : 0
+    return a
+  }
 }
