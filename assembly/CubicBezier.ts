@@ -8,6 +8,7 @@ export class CubicBezier {
   C2: Point
   P2: Point
 
+  @inline
   constructor(x1: f64, y1: f64, x2: f64, y2: f64, x3: f64, y3: f64, x4: f64, y4: f64) {
     this.P1 = new Point(x1, y1);
     this.C1 = new Point(x2, y2);
