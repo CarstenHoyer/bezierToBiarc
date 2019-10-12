@@ -3,7 +3,6 @@ export class Point {
   public x: f64;
   public y: f64;
 
-  @inline
   constructor(x: f64, y: f64) {
     this.x = x;
     this.y = y;

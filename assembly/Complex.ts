@@ -2,7 +2,6 @@ export class Complex {
   re: f64
   im: f64
 
-  @inline
   constructor(re: f64, im: f64) {
     this.re = re;
     this.im = im;
