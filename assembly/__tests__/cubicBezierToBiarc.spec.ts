@@ -3,17 +3,16 @@ import { console } from '../console'
 
 describe("cubicBezierToBiarc", () => {
   it("calculates biarcs", () => {
-    const points = new Float64Array(8);
-    points[0] = 100;
-    points[1] = 500;
-    points[2] = 150;
-    points[3] = 100;
-    points[4] = 500;
-    points[5] = 150;
-    points[6] = 350;
-    points[7] = 350;
-    const biarcs = cubicBezierToBiarc(points, 5, 1);
-    
+    let p0: f64 = 100;
+    let p1: f64 = 500;
+    let p2: f64 = 150;
+    let p3: f64 = 100;
+    let p4: f64 = 500;
+    let p5: f64 = 150;
+    let p6: f64 = 350;
+    let p7: f64 = 350;
+    const biarcs = cubicBezierToBiarc(p0, p1, p2, p3, p4, p5, p6, p7, 5, 1);
+
     expect<i32>(biarcs.length).toBe(16);
 
     expect<f64>(biarcs[0].A1.startAngle).toBeCloseTo(0.5205896);
@@ -29,7 +28,7 @@ describe("cubicBezierToBiarc", () => {
     expect<f64>(biarcs[0].A2.C.y).toBeCloseTo(178.49243);
     expect<f64>(biarcs[0].A2.r).toBeCloseTo(285.845949);
     expect<f64>(biarcs[0].A2.cw ? 1 : 0).toBeCloseTo(1);
-    
+
     expect<f64>(biarcs[15].A1.startAngle).toBeCloseTo(-3.01723);
     expect<f64>(biarcs[15].A1.sweepAngle).toBeCloseTo(0.04460);
     expect<f64>(biarcs[15].A1.C.x).toBeCloseTo(763.165415);

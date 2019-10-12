@@ -9,11 +9,18 @@ function isRealInflexionPoint(t: Complex): bool {
   return t.im == 0 && t.re > 0 && t.re < 1;
 }
 
-export function cubicBezierToBiarc(p: Float64Array, samplingStep: i8, tolerance: f64): BiArc[] {
+export function cubicBezierToBiarc(
+  x0: f64, y0: f64,
+  x1: f64, y1: f64,
+  x2: f64, y2: f64,
+  x3: f64, y3: f64,
+  samplingStep: i8,
+  tolerance: f64
+): BiArc[] {
   const biarcs = new Array<BiArc>();
   const curves = new Array<CubicBezier>();
 
-  let toSplit = new CubicBezier(p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7]);
+  let toSplit = new CubicBezier(x0, y0, x1, y1, x2, y2, x3, y3);
 
   const inflex = toSplit.inflexionPoints();
   const inflex0 = unchecked(inflex[0]);

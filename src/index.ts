@@ -10,8 +10,7 @@ let mod
       env: {
         abort(_msg, _file, line, column) {
           console.error("abort called at main.ts:" + line + ":" + column);
-        },
-        memory: new WebAssembly.Memory({ initial: 1024 })
+        }
       },
       console: {
         "console.logs": (ptr) => {
@@ -20,9 +19,6 @@ let mod
         "console.log64a": (ptr) => {
           console.log(mod.__getArrayView(ptr))
         }
-      },
-      imports: {
-
       }
     }
 

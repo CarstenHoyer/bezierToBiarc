@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --importMemory --sourceMap --debug --validate --measure --memoryBase 1024",
-    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat -d build/optimized.d.ts -O3 --importMemory --sourceMap --validate --measure",
+    "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --debug --validate",
+    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat -d build/optimized.d.ts -O3 --sourceMap --validate --measure",
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
     "start": "webpack-dev-server",
     "build": "npm run asbuild && webpack-cli",
