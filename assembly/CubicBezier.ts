@@ -8,6 +8,7 @@ export class CubicBezier {
   C2: Point
   P2: Point
 
+  @inline
   constructor(x1: f64, y1: f64, x2: f64, y2: f64, x3: f64, y3: f64, x4: f64, y4: f64) {
     this.P1 = new Point(x1, y1);
     this.C1 = new Point(x2, y2);
@@ -19,14 +20,14 @@ export class CubicBezier {
     const A = this.C1.sub(this.P1);
     const B = this.C2.sub(this.C1).sub(A);
     const C = this.P2.sub(this.C2).sub(A).sub(B.scale(2));
-      
-    const a = new Complex(B.x * C.y - B.y * C.x, 0);
-    const b = new Complex(A.x * C.y - A.y * C.x, 0);
-    const c = new Complex(A.x * B.y - A.y * B.x, 0);
-    
-    const bNeg = b.neg()
-    const sqrt = b.mul(b).sub(a.mul(c).scale(4)).sqrt()
-    const aa = a.scale(2)
+
+    const a = new Complex(B.x * C.y - B.y * C.x);
+    const b = new Complex(A.x * C.y - A.y * C.x);
+    const c = new Complex(A.x * B.y - A.y * B.x);
+
+    const bNeg = b.neg();
+    const sqrt = b.mul(b).sub(a.mul(c).scale(4)).sqrt();
+    const aa = a.scale(2);
 
     const t1 = (bNeg.add(sqrt)).div(aa);
     const t2 = (bNeg.sub(sqrt)).div(aa);
@@ -38,12 +39,12 @@ export class CubicBezier {
     const p0 = this.P1.add(this.C1.sub(this.P1).scale(t));
     const p1 = this.C1.add(this.C2.sub(this.C1).scale(t));
     const p2 = this.C2.add(this.P2.sub(this.C2).scale(t));
-    
+
     const p01 = p0.add(p1.sub(p0).scale(t));
     const p12 = p1.add(p2.sub(p1).scale(t));
-    
+
     const dp = p01.add(p12.sub(p01).scale(t));
-    
+
     return [
       new CubicBezier(this.P1.x, this.P1.y, p0.x, p0.y, p01.x, p01.y, dp.x, dp.y),
       new CubicBezier(dp.x, dp.y, p12.x, p12.y, p2.x, p2.y, this.P2.x, this.P2.y)
@@ -51,11 +52,14 @@ export class CubicBezier {
   }
 
   pointAt(t: f64): Point {
+    let it = 1 - t;
+    let t2 = t * t;
+    let it2 = it * it;
     return (
-        this.P1.scale(Math.pow(1 - t, 3)).add(
-        this.C1.scale(3 * Math.pow(1 - t, 2) * t)).add(
-        this.C2.scale(3 * (1 - t) * Math.pow(t, 2))).add(
-        this.P2.scale(Math.pow(t, 3)))
+      this.P1.scale(it2 * it).add(
+      this.C1.scale(3 * it2 * t)).add(
+      this.C2.scale(3 * it * t2)).add(
+      this.P2.scale(t2 * t))
     );
   }
 

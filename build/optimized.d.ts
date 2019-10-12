@@ -14,6 +14,6 @@ declare module ASModule {
   export function __collect(): void;
   export var __rtti_base: u32;
   export var FLOAT64ARRAY_ID: u32;
-  export function compute(input: u32, samplingStep: i8, tolerance: f64): u32;
+  export function compute(input: u32, samplingStep: i32, tolerance: f64): u32;
 }
 export default ASModule;

@@ -1,35 +1,34 @@
 export class Complex {
-  re: f64
-  im: f64
+  constructor(public re: f64 = 0, public im: f64 = 0) {}
 
-  constructor(re: f64, im: f64) {
-    this.re = re;
-    this.im = im;
-  }
-
+  @inline
   neg (): Complex {
     return new Complex(-this.re, -this.im);
   }
 
+  @inline
   scale (scalar: f64): Complex {
     return new Complex(this.re * scalar, this.im * scalar);
   }
 
   mul (other: Complex): Complex {
-      // Short circuit for real values
-      if (other.im === 0 && this.im === 0) {
-        return new Complex(this.re * other.re, 0);
-      }
+    // Short circuit for real values
+    if (other.im === 0 && this.im === 0) {
+      return new Complex(this.re * other.re);
+    }
 
-      return new Complex(
-              this.re * other.re - this.im * other.im,
-              this.re * other.im + this.im * other.re);
+    return new Complex(
+      this.re * other.re - this.im * other.im,
+      this.re * other.im + this.im * other.re
+    );
   }
 
+  @inline
   sub (other: Complex): Complex {
     return new Complex(this.re - other.re, this.im - other.im);
   }
 
+  @inline
   add (other: Complex): Complex {
     return new Complex(this.re + other.re, this.im + other.im);
   }
@@ -40,7 +39,8 @@ export class Complex {
 
     const c = other.re;
     const d = other.im;
-    let t: f64
+
+    let t: f64;
     let x: f64;
 
     if (0 === d) {
@@ -54,8 +54,9 @@ export class Complex {
       t = c * x + d;
 
       return new Complex(
-              (a * x + b) / t,
-              (b * x - a) / t);
+        (a * x + b) / t,
+        (b * x - a) / t
+      );
 
     } else {
 
@@ -63,8 +64,9 @@ export class Complex {
       t = d * x + c;
 
       return new Complex(
-              (a + b * x) / t,
-              (b - a * x) / t);
+        (a + b * x) / t,
+        (b - a * x) / t
+      );
     }
   }
 
@@ -82,13 +84,13 @@ export class Complex {
         return new Complex(Math.sqrt(a), 0);
       }
 
-      re = 0.5 * Math.sqrt(2.0 * (r + a));
+      re = 0.5 * Math.sqrt(2 * (r + a));
     } else {
       re = Math.abs(b) / Math.sqrt(2 * (r - a));
     }
 
     if (a <= 0) {
-      im = 0.5 * Math.sqrt(2.0 * (r - a));
+      im = 0.5 * Math.sqrt(2 * (r - a));
     } else {
       im = Math.abs(b) / Math.sqrt(2 * (r + a));
     }
@@ -96,32 +98,20 @@ export class Complex {
     return new Complex(re, b < 0 ? -im : im);
   }
 
+  @inline
   abs (): f64 {
     return this.hypot(this.re, this.im);
   }
 
+  @inline
   hypot (x: f64, y: f64): f64 {
-
-    let a = Math.abs(x);
-    let b = Math.abs(y);
-
-    if (a < 3000 && b < 3000) {
-      return Math.sqrt(a * a + b * b);
-    }
-
-    if (a < b) {
-      a = b;
-      b = x / y;
-    } else {
-      b = y / x;
-    }
-    return a * Math.sqrt(1 + b * b);
+    return Math.hypot(x, y);
   }
 
   toArray(): Float64Array {
     const a = new Float64Array(2)
-    a[0] = this.im
-    a[1] = this.re
+    unchecked(a[0] = this.im)
+    unchecked(a[1] = this.re)
     return a
   }
 }

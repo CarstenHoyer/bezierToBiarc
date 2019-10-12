@@ -8,26 +8,34 @@ export class Point {
     this.y = y;
   }
 
+  @inline
   sub(other: Point): Point {
     return new Point(this.x - other.x, this.y - other.y);
   }
 
+  @inline
   add(other: Point): Point {
     return new Point(this.x + other.x, this.y + other.y);
   }
 
+  @inline
   scale(scalar: f64): Point {
     return new Point(this.x * scalar, this.y * scalar);
   }
 
+  @inline
   div(scalar: f64): Point {
     return new Point(this.x / scalar, this.y / scalar);
   }
 
+  @inline
   distance(other: Point): f64 {
-    return Math.sqrt(Math.pow(other.x - this.x, 2) + Math.pow(other.y - this.y, 2));
+    let dx = other.x - this.x;
+    let dy = other.y - this.y;
+    return Math.sqrt(dx * dx + dy * dy);
   }
 
+  @inline
   length(): f64 {
     return Math.sqrt(this.x * this.x + this.y * this.y);
   }
