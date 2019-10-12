@@ -1,11 +1,5 @@
 export class Complex {
-  re: f64
-  im: f64
-
-  constructor(re: f64, im: f64) {
-    this.re = re;
-    this.im = im;
-  }
+  constructor(public re: f64 = 0, public im: f64 = 0) {}
 
   @inline
   neg (): Complex {
@@ -20,7 +14,7 @@ export class Complex {
   mul (other: Complex): Complex {
     // Short circuit for real values
     if (other.im === 0 && this.im === 0) {
-      return new Complex(this.re * other.re, 0);
+      return new Complex(this.re * other.re);
     }
 
     return new Complex(

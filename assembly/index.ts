@@ -3,7 +3,7 @@ import { BiArc } from './BiArc'
 
 export const FLOAT64ARRAY_ID = idof<Float64Array>()
 
-export function compute(input: Float64Array, samplingStep: i8, tolerance: f64): Float64Array {
+export function compute(input: Float64Array, samplingStep: i32, tolerance: f64): Float64Array {
   let biarcs: BiArc[] = [];
 
   for (let i = 0, len = input.length; i < len; i += 8) {

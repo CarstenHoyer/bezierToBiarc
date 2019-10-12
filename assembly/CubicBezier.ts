@@ -21,13 +21,13 @@ export class CubicBezier {
     const B = this.C2.sub(this.C1).sub(A);
     const C = this.P2.sub(this.C2).sub(A).sub(B.scale(2));
 
-    const a = new Complex(B.x * C.y - B.y * C.x, 0);
-    const b = new Complex(A.x * C.y - A.y * C.x, 0);
-    const c = new Complex(A.x * B.y - A.y * B.x, 0);
+    const a = new Complex(B.x * C.y - B.y * C.x);
+    const b = new Complex(A.x * C.y - A.y * C.x);
+    const c = new Complex(A.x * B.y - A.y * B.x);
 
-    const bNeg = b.neg()
-    const sqrt = b.mul(b).sub(a.mul(c).scale(4)).sqrt()
-    const aa = a.scale(2)
+    const bNeg = b.neg();
+    const sqrt = b.mul(b).sub(a.mul(c).scale(4)).sqrt();
+    const aa = a.scale(2);
 
     const t1 = (bNeg.add(sqrt)).div(aa);
     const t2 = (bNeg.sub(sqrt)).div(aa);
@@ -53,11 +53,13 @@ export class CubicBezier {
 
   pointAt(t: f64): Point {
     let it = 1 - t;
+    let t2 = t * t;
+    let it2 = it * it;
     return (
-      this.P1.scale(it * it * it).add(
-      this.C1.scale(3 * it * it * t)).add(
-      this.C2.scale(3 * (1 - t) * t * t)).add(
-      this.P2.scale(t * t * t))
+      this.P1.scale(it2 * it).add(
+      this.C1.scale(3 * it2 * t)).add(
+      this.C2.scale(3 * it * t2)).add(
+      this.P2.scale(t2 * t))
     );
   }
 

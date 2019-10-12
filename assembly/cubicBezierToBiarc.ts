@@ -13,7 +13,7 @@ export function cubicBezierToBiarc(
   x1: f64, y1: f64,
   x2: f64, y2: f64,
   x3: f64, y3: f64,
-  samplingStep: i8 = 5,
+  samplingStep: i32 = 5,
   tolerance: f64 = 1
 ): BiArc[] {
   const biarcs = new Array<BiArc>();
@@ -85,7 +85,7 @@ export function cubicBezierToBiarc(
     let maxDistance = 0.0;
     let maxDistanceAt = 0.0;
 
-    const nrPointsToCheck: f64 = biarc.length() / samplingStep;
+    const nrPointsToCheck = biarc.length() / samplingStep;
     const parameterStep = 1.0 / nrPointsToCheck;
 
     for (let i = 0.0; i <= nrPointsToCheck; ++i) {
