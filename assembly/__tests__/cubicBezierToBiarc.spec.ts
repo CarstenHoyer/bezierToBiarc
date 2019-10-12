@@ -1,8 +1,7 @@
 import { cubicBezierToBiarc } from '../cubicBezierToBiarc'
-import { console } from '../console'
 
 describe("cubicBezierToBiarc", () => {
-  it("calculates biarcs", () => {
+  it("calculates biarcs 1", () => {
     const points = new Float64Array(8);
     points[0] = 100;
     points[1] = 500;
@@ -45,7 +44,7 @@ describe("cubicBezierToBiarc", () => {
     expect<f64>(biarcs[15].A2.cw ? 1 : 0).toBeCloseTo(1);
   });
 
-  it("calculates biarcs", () => {
+  it("calculates biarcs 2", () => {
     const points = new Float64Array(8);
     points[0] = 50;
     points[1] = 100;
