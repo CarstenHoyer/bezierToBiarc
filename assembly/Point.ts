@@ -28,6 +28,7 @@ export class Point {
     return new Point(this.x / scalar, this.y / scalar);
   }
 
+  @inline
   distance(other: Point): f64 {
     let dx = other.x - this.x;
     let dy = other.y - this.y;

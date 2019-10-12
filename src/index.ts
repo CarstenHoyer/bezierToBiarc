@@ -50,10 +50,10 @@ let mod
       points[i] = curves[i]
     }
 
-    const { compute, __retain, __allocArray, __getArrayView, FLOAT64ARRAY_ID } = mod
+    const { compute, __retain, __allocArray, __getFloat64Array, FLOAT64ARRAY_ID } = mod
     const id = __retain(__allocArray(FLOAT64ARRAY_ID, points))
     console.time('compute')
-    const r = __getArrayView(compute(id, 5, 1))
+    const r = __getFloat64Array(compute(id, 5, 1))
     const output = []
     for (let i = 0; i < r.length; i = i + 6) {
       output.push([r[i], r[i + 1], r[i + 2], r[i + 3], r[i + 4], r[i + 5]])

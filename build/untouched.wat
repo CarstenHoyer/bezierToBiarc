@@ -5653,39 +5653,7 @@
   end
   unreachable
  )
- (func $assembly/Point/Point#distance (; 67 ;) (type $FUNCSIG$dii) (param $0 i32) (param $1 i32) (result f64)
-  (local $2 f64)
-  (local $3 f64)
-  (local $4 f64)
-  local.get $1
-  call $~lib/rt/pure/__retain
-  drop
-  local.get $1
-  f64.load
-  local.get $0
-  f64.load
-  f64.sub
-  local.set $2
-  local.get $1
-  f64.load offset=8
-  local.get $0
-  f64.load offset=8
-  f64.sub
-  local.set $3
-  local.get $2
-  local.get $2
-  f64.mul
-  local.get $3
-  local.get $3
-  f64.mul
-  f64.add
-  call $~lib/bindings/Math/sqrt
-  local.set $4
-  local.get $1
-  call $~lib/rt/pure/__release
-  local.get $4
- )
- (func $assembly/Line/Line.createPerpendicularAt (; 68 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/Line/Line.createPerpendicularAt (; 67 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 f64)
@@ -5791,7 +5759,7 @@
   end
   unreachable
  )
- (func $assembly/Arc/Arc#constructor (; 69 ;) (type $FUNCSIG$iiidddiii) (param $0 i32) (param $1 i32) (param $2 f64) (param $3 f64) (param $4 f64) (param $5 i32) (param $6 i32) (param $7 i32) (result i32)
+ (func $assembly/Arc/Arc#constructor (; 68 ;) (type $FUNCSIG$iiidddiii) (param $0 i32) (param $1 i32) (param $2 f64) (param $3 f64) (param $4 f64) (param $5 i32) (param $6 i32) (param $7 i32) (result i32)
   (local $8 i32)
   (local $9 i32)
   local.get $1
@@ -5904,7 +5872,7 @@
   call $~lib/rt/pure/__release
   local.get $0
  )
- (func $assembly/BiArc/BiArc#constructor (; 70 ;) (type $FUNCSIG$iiiiiii) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32) (result i32)
+ (func $assembly/BiArc/BiArc#constructor (; 69 ;) (type $FUNCSIG$iiiiiii) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32) (result i32)
   (local $6 f64)
   (local $7 i32)
   (local $8 i32)
@@ -6485,7 +6453,7 @@
   call $~lib/rt/pure/__release
   local.get $0
  )
- (func $assembly/BiArc/BiArc#length (; 71 ;) (type $FUNCSIG$di) (param $0 i32) (result f64)
+ (func $assembly/BiArc/BiArc#length (; 70 ;) (type $FUNCSIG$di) (param $0 i32) (result f64)
   (local $1 i32)
   local.get $0
   i32.load
@@ -6507,7 +6475,7 @@
   f64.mul
   f64.add
  )
- (func $assembly/Arc/Arc#pointAt (; 72 ;) (type $FUNCSIG$iid) (param $0 i32) (param $1 f64) (result i32)
+ (func $assembly/Arc/Arc#pointAt (; 71 ;) (type $FUNCSIG$iid) (param $0 i32) (param $1 f64) (result i32)
   (local $2 f64)
   (local $3 f64)
   local.get $0
@@ -6547,7 +6515,7 @@
   local.get $3
   call $assembly/Point/Point#constructor
  )
- (func $assembly/BiArc/BiArc#pointAt (; 73 ;) (type $FUNCSIG$iid) (param $0 i32) (param $1 f64) (result i32)
+ (func $assembly/BiArc/BiArc#pointAt (; 72 ;) (type $FUNCSIG$iid) (param $0 i32) (param $1 f64) (result i32)
   (local $2 i32)
   (local $3 f64)
   local.get $0
@@ -6606,7 +6574,7 @@
   end
   unreachable
  )
- (func $assembly/CubicBezier/CubicBezier#pointAt (; 74 ;) (type $FUNCSIG$iid) (param $0 i32) (param $1 f64) (result i32)
+ (func $assembly/CubicBezier/CubicBezier#pointAt (; 73 ;) (type $FUNCSIG$iid) (param $0 i32) (param $1 f64) (result i32)
   (local $2 f64)
   (local $3 f64)
   (local $4 i32)
@@ -6768,7 +6736,7 @@
   call $~lib/rt/pure/__release
   local.get $9
  )
- (func $~lib/array/Array<assembly/BiArc/BiArc>#push (; 75 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/array/Array<assembly/BiArc/BiArc>#push (; 74 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -6804,7 +6772,7 @@
   call $~lib/rt/pure/__release
   local.get $4
  )
- (func $assembly/cubicBezierToBiarc/cubicBezierToBiarc (; 76 ;) (type $FUNCSIG$iiid) (param $0 i32) (param $1 i32) (param $2 f64) (result i32)
+ (func $assembly/cubicBezierToBiarc/cubicBezierToBiarc (; 75 ;) (type $FUNCSIG$iiid) (param $0 i32) (param $1 i32) (param $2 f64) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -6822,21 +6790,22 @@
   (local $17 i32)
   (local $18 f64)
   (local $19 f64)
-  (local $20 i32)
+  (local $20 f64)
   (local $21 i32)
   (local $22 i32)
   (local $23 i32)
   (local $24 i32)
-  (local $25 f64)
+  (local $25 i32)
   (local $26 f64)
-  (local $27 i32)
-  (local $28 f64)
-  (local $29 i32)
+  (local $27 f64)
+  (local $28 i32)
+  (local $29 f64)
   (local $30 i32)
   (local $31 i32)
   (local $32 i32)
   (local $33 i32)
-  (local $34 f64)
+  (local $34 i32)
+  (local $35 f64)
   local.get $0
   call $~lib/rt/pure/__retain
   drop
@@ -7133,83 +7102,128 @@
     local.set $12
     local.get $17
     i32.load offset=12
+    local.set $10
     local.get $12
-    call $assembly/Point/Point#distance
+    call $~lib/rt/pure/__retain
+    local.set $9
+    local.get $9
+    f64.load
+    local.get $10
+    f64.load
+    f64.sub
     local.set $14
-    local.get $17
-    i32.load
-    local.get $12
-    call $assembly/Point/Point#distance
+    local.get $9
+    f64.load offset=8
+    local.get $10
+    f64.load offset=8
+    f64.sub
+    local.set $13
+    local.get $14
+    local.get $14
+    f64.mul
+    local.get $13
+    local.get $13
+    f64.mul
+    f64.add
+    call $~lib/bindings/Math/sqrt
+    local.set $18
+    local.get $9
+    call $~lib/rt/pure/__release
+    local.get $18
     local.set $13
     local.get $17
     i32.load
-    local.get $17
-    i32.load offset=12
-    call $assembly/Point/Point#distance
+    local.set $9
+    local.get $12
+    call $~lib/rt/pure/__retain
+    local.set $11
+    local.get $11
+    f64.load
+    local.get $9
+    f64.load
+    f64.sub
+    local.set $14
+    local.get $11
+    f64.load offset=8
+    local.get $9
+    f64.load offset=8
+    f64.sub
+    local.set $18
+    local.get $14
+    local.get $14
+    f64.mul
+    local.get $18
+    local.get $18
+    f64.mul
+    f64.add
+    call $~lib/bindings/Math/sqrt
+    local.set $19
+    local.get $11
+    call $~lib/rt/pure/__release
+    local.get $19
     local.set $18
     local.get $17
     i32.load
-    local.set $9
-    local.get $14
+    local.set $11
+    local.get $17
+    i32.load offset=12
+    call $~lib/rt/pure/__retain
+    local.set $10
+    local.get $10
+    f64.load
+    local.get $11
+    f64.load
+    f64.sub
+    local.set $14
+    local.get $10
+    f64.load offset=8
+    local.get $11
+    f64.load offset=8
+    f64.sub
     local.set $19
+    local.get $14
+    local.get $14
+    f64.mul
+    local.get $19
+    local.get $19
+    f64.mul
+    f64.add
+    call $~lib/bindings/Math/sqrt
+    local.set $20
+    local.get $10
+    call $~lib/rt/pure/__release
+    local.get $20
+    local.set $19
+    local.get $17
+    i32.load
+    local.set $9
+    local.get $13
+    local.set $20
     i32.const 0
     local.get $9
     f64.load
-    local.get $19
+    local.get $20
     f64.mul
     local.get $9
     f64.load offset=8
-    local.get $19
+    local.get $20
     f64.mul
     call $assembly/Point/Point#constructor
     local.tee $9
-    local.set $20
+    local.set $21
     local.get $17
     i32.load offset=12
     local.set $10
-    local.get $13
-    local.set $19
-    i32.const 0
-    local.get $10
-    f64.load
-    local.get $19
-    f64.mul
-    local.get $10
-    f64.load offset=8
-    local.get $19
-    f64.mul
-    call $assembly/Point/Point#constructor
-    local.set $11
-    i32.const 0
-    local.get $20
-    f64.load
-    local.get $11
-    f64.load
-    f64.add
-    local.get $20
-    f64.load offset=8
-    local.get $11
-    f64.load offset=8
-    f64.add
-    call $assembly/Point/Point#constructor
-    local.set $10
-    local.get $11
-    call $~lib/rt/pure/__release
-    local.get $10
-    local.tee $20
-    local.set $21
-    local.get $12
-    local.set $10
     local.get $18
-    local.set $19
+    local.set $14
     i32.const 0
     local.get $10
     f64.load
-    local.get $19
+    local.get $14
     f64.mul
     local.get $10
     f64.load offset=8
-    local.get $19
+    local.get $14
     f64.mul
     call $assembly/Point/Point#constructor
     local.set $11
@@ -7230,51 +7244,84 @@
     call $~lib/rt/pure/__release
     local.get $10
     local.tee $21
+    local.set $22
+    local.get $12
     local.set $10
-    local.get $14
-    local.get $13
-    f64.add
-    local.get $18
-    f64.add
-    local.set $19
+    local.get $19
+    local.set $20
     i32.const 0
     local.get $10
     f64.load
-    local.get $19
-    f64.div
+    local.get $20
+    f64.mul
     local.get $10
     f64.load offset=8
-    local.get $19
-    f64.div
+    local.get $20
+    f64.mul
     call $assembly/Point/Point#constructor
-    local.set $10
-    i32.const 0
-    local.get $17
-    i32.load
-    local.get $17
-    i32.load
-    local.set $22
-    local.get $17
-    i32.load offset=4
-    call $~lib/rt/pure/__retain
     local.set $11
     i32.const 0
     local.get $22
     f64.load
     local.get $11
     f64.load
-    f64.sub
+    f64.add
     local.get $22
+    f64.load offset=8
+    local.get $11
+    f64.load offset=8
+    f64.add
+    call $assembly/Point/Point#constructor
+    local.set $10
+    local.get $11
+    call $~lib/rt/pure/__release
+    local.get $10
+    local.tee $22
+    local.set $10
+    local.get $13
+    local.get $18
+    f64.add
+    local.get $19
+    f64.add
+    local.set $14
+    i32.const 0
+    local.get $10
+    f64.load
+    local.get $14
+    f64.div
+    local.get $10
+    f64.load offset=8
+    local.get $14
+    f64.div
+    call $assembly/Point/Point#constructor
+    local.set $10
+    i32.const 0
+    local.get $17
+    i32.load
+    local.get $17
+    i32.load
+    local.set $23
+    local.get $17
+    i32.load offset=4
+    call $~lib/rt/pure/__retain
+    local.set $11
+    i32.const 0
+    local.get $23
+    f64.load
+    local.get $11
+    f64.load
+    f64.sub
+    local.get $23
     f64.load offset=8
     local.get $11
     f64.load offset=8
     f64.sub
     call $assembly/Point/Point#constructor
-    local.set $23
+    local.set $24
     local.get $11
     call $~lib/rt/pure/__release
-    local.get $23
-    local.tee $22
+    local.get $24
+    local.tee $23
     local.get $17
     i32.load offset=12
     local.get $17
@@ -7283,155 +7330,156 @@
     local.get $17
     i32.load offset=8
     call $~lib/rt/pure/__retain
-    local.set $23
+    local.set $24
     i32.const 0
     local.get $11
     f64.load
-    local.get $23
+    local.get $24
     f64.load
     f64.sub
     local.get $11
     f64.load offset=8
-    local.get $23
+    local.get $24
     f64.load offset=8
     f64.sub
     call $assembly/Point/Point#constructor
-    local.set $24
-    local.get $23
-    call $~lib/rt/pure/__release
+    local.set $25
     local.get $24
+    call $~lib/rt/pure/__release
+    local.get $25
     local.tee $11
     local.get $10
     call $assembly/BiArc/BiArc#constructor
-    local.set $23
+    local.set $24
     f64.const 0
-    local.set $19
+    local.set $14
     f64.const 0
-    local.set $25
-    local.get $23
+    local.set $20
+    local.get $24
     call $assembly/BiArc/BiArc#length
     local.get $1
     f64.convert_i32_s
     f64.div
-    i32.trunc_f64_s
-    local.set $24
-    f64.const 1
-    local.get $24
-    f64.convert_i32_s
-    f64.div
     local.set $26
+    f64.const 1
+    local.get $26
+    f64.div
+    local.set $27
+    local.get $26
+    i32.trunc_f64_s
+    local.set $25
     block $break|1
      i32.const 0
-     local.set $27
+     local.set $28
      loop $loop|1
-      local.get $27
-      local.get $24
+      local.get $28
+      local.get $25
       i32.le_s
       i32.eqz
       br_if $break|1
-      local.get $26
       local.get $27
+      local.get $28
       f64.convert_i32_s
       f64.mul
-      local.set $28
-      local.get $23
-      local.get $28
-      call $assembly/BiArc/BiArc#pointAt
       local.set $29
-      local.get $17
-      local.get $28
-      call $assembly/CubicBezier/CubicBezier#pointAt
-      local.set $30
+      local.get $24
       local.get $29
-      local.set $32
-      local.get $30
-      call $~lib/rt/pure/__retain
+      call $assembly/BiArc/BiArc#pointAt
+      local.set $30
+      local.get $17
+      local.get $29
+      call $assembly/CubicBezier/CubicBezier#pointAt
       local.set $31
-      i32.const 0
-      local.get $32
-      f64.load
+      local.get $30
+      local.set $33
       local.get $31
+      call $~lib/rt/pure/__retain
+      local.set $32
+      i32.const 0
+      local.get $33
+      f64.load
+      local.get $32
       f64.load
       f64.sub
-      local.get $32
+      local.get $33
       f64.load offset=8
-      local.get $31
+      local.get $32
       f64.load offset=8
       f64.sub
       call $assembly/Point/Point#constructor
-      local.set $33
-      local.get $31
+      local.set $34
+      local.get $32
       call $~lib/rt/pure/__release
-      local.get $33
-      local.tee $32
-      local.set $33
-      local.get $33
+      local.get $34
+      local.tee $33
+      local.set $34
+      local.get $34
       f64.load
-      local.get $33
+      local.get $34
       f64.load
       f64.mul
-      local.get $33
+      local.get $34
       f64.load offset=8
-      local.get $33
+      local.get $34
       f64.load offset=8
       f64.mul
       f64.add
       call $~lib/bindings/Math/sqrt
-      local.set $34
-      local.get $34
-      local.get $19
+      local.set $35
+      local.get $35
+      local.get $14
       f64.gt
       if
-       local.get $34
-       local.set $19
-       local.get $28
-       local.set $25
+       local.get $35
+       local.set $14
+       local.get $29
+       local.set $20
       end
-      local.get $27
+      local.get $28
       i32.const 1
       i32.add
-      local.set $27
-      local.get $29
-      call $~lib/rt/pure/__release
+      local.set $28
       local.get $30
       call $~lib/rt/pure/__release
-      local.get $32
+      local.get $31
+      call $~lib/rt/pure/__release
+      local.get $33
       call $~lib/rt/pure/__release
       br $loop|1
      end
      unreachable
     end
-    local.get $19
+    local.get $14
     local.get $2
     f64.gt
     if
      local.get $17
-     local.get $25
+     local.get $20
      call $assembly/CubicBezier/CubicBezier#split
-     local.set $32
+     local.set $33
      local.get $4
-     local.get $32
+     local.get $33
      i32.const 0
+     call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#__get
+     local.tee $31
+     call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
+     drop
+     local.get $4
+     local.get $33
+     i32.const 1
      call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#__get
      local.tee $30
      call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
      drop
-     local.get $4
-     local.get $32
-     i32.const 1
-     call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#__get
-     local.tee $29
-     call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
-     drop
-     local.get $32
+     local.get $33
+     call $~lib/rt/pure/__release
+     local.get $31
      call $~lib/rt/pure/__release
      local.get $30
      call $~lib/rt/pure/__release
-     local.get $29
-     call $~lib/rt/pure/__release
     else     
      local.get $3
-     local.get $23
+     local.get $24
      call $~lib/array/Array<assembly/BiArc/BiArc>#push
      drop
     end
@@ -7445,24 +7493,24 @@
     call $~lib/rt/pure/__release
     local.get $9
     call $~lib/rt/pure/__release
-    local.get $20
-    call $~lib/rt/pure/__release
     local.get $21
-    call $~lib/rt/pure/__release
-    local.get $10
     call $~lib/rt/pure/__release
     local.get $22
     call $~lib/rt/pure/__release
-    local.get $11
+    local.get $10
     call $~lib/rt/pure/__release
     local.get $23
+    call $~lib/rt/pure/__release
+    local.get $11
+    call $~lib/rt/pure/__release
+    local.get $24
     call $~lib/rt/pure/__release
     br $continue|0
    end
    unreachable
   end
   local.get $3
-  local.set $24
+  local.set $25
   local.get $4
   call $~lib/rt/pure/__release
   local.get $5
@@ -7471,9 +7519,9 @@
   call $~lib/rt/pure/__release
   local.get $0
   call $~lib/rt/pure/__release
-  local.get $24
+  local.get $25
  )
- (func $~lib/array/Array<assembly/BiArc/BiArc>#concat (; 77 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/array/Array<assembly/BiArc/BiArc>#concat (; 76 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -7606,11 +7654,11 @@
   call $~lib/rt/pure/__release
   local.get $9
  )
- (func $~lib/array/Array<assembly/BiArc/BiArc>#get:length (; 78 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/array/Array<assembly/BiArc/BiArc>#get:length (; 77 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   local.get $0
   i32.load offset=12
  )
- (func $~lib/array/Array<assembly/BiArc/BiArc>#__unchecked_get (; 79 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/array/Array<assembly/BiArc/BiArc>#__unchecked_get (; 78 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $0
   i32.load offset=4
   local.get $1
@@ -7620,7 +7668,7 @@
   i32.load
   call $~lib/rt/pure/__retain
  )
- (func $~lib/array/Array<assembly/BiArc/BiArc>#__get (; 80 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/array/Array<assembly/BiArc/BiArc>#__get (; 79 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $1
   local.get $0
   i32.load offset=12
@@ -7651,7 +7699,7 @@
   local.get $1
   call $~lib/array/Array<assembly/BiArc/BiArc>#__unchecked_get
  )
- (func $~lib/typedarray/Float64Array#__set (; 81 ;) (type $FUNCSIG$viid) (param $0 i32) (param $1 i32) (param $2 f64)
+ (func $~lib/typedarray/Float64Array#__set (; 80 ;) (type $FUNCSIG$viid) (param $0 i32) (param $1 i32) (param $2 f64)
   local.get $1
   local.get $0
   i32.load offset=8
@@ -7675,7 +7723,7 @@
   local.get $2
   f64.store
  )
- (func $assembly/index/compute (; 82 ;) (type $FUNCSIG$iiid) (param $0 i32) (param $1 i32) (param $2 f64) (result i32)
+ (func $assembly/index/compute (; 81 ;) (type $FUNCSIG$iiid) (param $0 i32) (param $1 i32) (param $2 f64) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -7948,7 +7996,7 @@
   call $~lib/rt/pure/__release
   local.get $11
  )
- (func $~lib/rt/pure/__visit (; 83 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/rt/pure/__visit (; 82 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   local.get $0
@@ -8078,7 +8126,7 @@
    end
   end
  )
- (func $~lib/array/Array<assembly/BiArc/BiArc>#__visit_impl (; 84 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/array/Array<assembly/BiArc/BiArc>#__visit_impl (; 83 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -8117,10 +8165,10 @@
    unreachable
   end
  )
- (func $~lib/array/Array<i32>#__visit_impl (; 85 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/array/Array<i32>#__visit_impl (; 84 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   nop
  )
- (func $~lib/array/Array<assembly/CubicBezier/CubicBezier>#__visit_impl (; 86 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/array/Array<assembly/CubicBezier/CubicBezier>#__visit_impl (; 85 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -8159,7 +8207,7 @@
    unreachable
   end
  )
- (func $~lib/array/Array<assembly/Complex/Complex>#__visit_impl (; 87 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/array/Array<assembly/Complex/Complex>#__visit_impl (; 86 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -8198,7 +8246,7 @@
    unreachable
   end
  )
- (func $~lib/rt/__visit_members (; 88 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/rt/__visit_members (; 87 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   block $block$4$break
    block $switch$1$default
@@ -8331,6 +8379,6 @@
   end
   return
  )
- (func $null (; 89 ;) (type $FUNCSIG$v)
+ (func $null (; 88 ;) (type $FUNCSIG$v)
  )
 )
