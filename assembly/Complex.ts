@@ -7,29 +7,34 @@ export class Complex {
     this.im = im;
   }
 
+  @inline
   neg (): Complex {
     return new Complex(-this.re, -this.im);
   }
 
+  @inline
   scale (scalar: f64): Complex {
     return new Complex(this.re * scalar, this.im * scalar);
   }
 
   mul (other: Complex): Complex {
-      // Short circuit for real values
-      if (other.im === 0 && this.im === 0) {
-        return new Complex(this.re * other.re, 0);
-      }
+    // Short circuit for real values
+    if (other.im === 0 && this.im === 0) {
+      return new Complex(this.re * other.re, 0);
+    }
 
-      return new Complex(
-              this.re * other.re - this.im * other.im,
-              this.re * other.im + this.im * other.re);
+    return new Complex(
+      this.re * other.re - this.im * other.im,
+      this.re * other.im + this.im * other.re
+    );
   }
 
+  @inline
   sub (other: Complex): Complex {
     return new Complex(this.re - other.re, this.im - other.im);
   }
 
+  @inline
   add (other: Complex): Complex {
     return new Complex(this.re + other.re, this.im + other.im);
   }
@@ -82,13 +87,13 @@ export class Complex {
         return new Complex(Math.sqrt(a), 0);
       }
 
-      re = 0.5 * Math.sqrt(2.0 * (r + a));
+      re = 0.5 * Math.sqrt(2 * (r + a));
     } else {
       re = Math.abs(b) / Math.sqrt(2 * (r - a));
     }
 
     if (a <= 0) {
-      im = 0.5 * Math.sqrt(2.0 * (r - a));
+      im = 0.5 * Math.sqrt(2 * (r - a));
     } else {
       im = Math.abs(b) / Math.sqrt(2 * (r + a));
     }

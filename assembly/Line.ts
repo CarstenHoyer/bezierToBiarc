@@ -7,7 +7,7 @@ export class Line {
 
   constructor(p1: Point, p2: Point | null, m: f64 = 0) {
     this.P = p1
-    if (p2 instanceof Point) {
+    if (p2 !== null) {
       this.m = Line.slope(p1, p2)
     } else {
       this.m = m
@@ -52,7 +52,7 @@ export class Line {
     return new Point(x, y);
   }
 
-
+  @inline
   static slope(p1: Point, p2: Point): f64 {
     if (p1.x === p2.x) {
       return NaN;

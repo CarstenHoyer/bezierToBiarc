@@ -20,6 +20,7 @@ export class Arc {
       this.P2 = P2;
   }
 
+  @inline
   length(): f64 {
     return this.r * Math.abs(this.sweepAngle);
   }
