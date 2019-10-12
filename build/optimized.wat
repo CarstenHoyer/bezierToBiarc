@@ -13,7 +13,6 @@
  (type $FUNCSIG$ddd (func (param f64 f64) (result f64)))
  (type $FUNCSIG$dd (func (param f64) (result f64)))
  (type $FUNCSIG$iid (func (param i32 f64) (result i32)))
- (type $FUNCSIG$idd (func (param f64 f64) (result i32)))
  (type $FUNCSIG$idddddddd (func (param f64 f64 f64 f64 f64 f64 f64 f64) (result i32)))
  (type $FUNCSIG$iidddiii (func (param i32 f64 f64 f64 i32 i32 i32) (result i32)))
  (type $FUNCSIG$iiiiii (func (param i32 i32 i32 i32 i32) (result i32)))
@@ -2949,88 +2948,116 @@
   i32.const 3
   call $~lib/arraybuffer/ArrayBufferView#constructor
  )
- (func $assembly/Point/Point#constructor (; 37 ;) (type $FUNCSIG$idd) (param $0 f64) (param $1 f64) (result i32)
-  (local $2 i32)
-  i32.const 16
-  i32.const 6
-  call $~lib/rt/tlsf/__alloc
-  call $~lib/rt/pure/__retain
-  local.tee $2
-  f64.const 0
-  f64.store
-  local.get $2
-  f64.const 0
-  f64.store offset=8
-  local.get $2
-  local.get $0
-  f64.store
-  local.get $2
-  local.get $1
-  f64.store offset=8
-  local.get $2
- )
- (func $assembly/CubicBezier/CubicBezier#constructor (; 38 ;) (type $FUNCSIG$idddddddd) (param $0 f64) (param $1 f64) (param $2 f64) (param $3 f64) (param $4 f64) (param $5 f64) (param $6 f64) (param $7 f64) (result i32)
+ (func $assembly/CubicBezier/CubicBezier#constructor (; 37 ;) (type $FUNCSIG$idddddddd) (param $0 f64) (param $1 f64) (param $2 f64) (param $3 f64) (param $4 f64) (param $5 f64) (param $6 f64) (param $7 f64) (result i32)
   (local $8 i32)
   (local $9 i32)
   i32.const 16
   i32.const 9
   call $~lib/rt/tlsf/__alloc
   call $~lib/rt/pure/__retain
-  local.tee $8
+  local.tee $9
   i32.const 0
   i32.store
-  local.get $8
+  local.get $9
   i32.const 0
   i32.store offset=4
-  local.get $8
+  local.get $9
   i32.const 0
   i32.store offset=8
-  local.get $8
+  local.get $9
   i32.const 0
   i32.store offset=12
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $8
+  f64.const 0
+  f64.store
+  local.get $8
+  f64.const 0
+  f64.store offset=8
+  local.get $8
   local.get $0
+  f64.store
+  local.get $8
   local.get $1
-  call $assembly/Point/Point#constructor
-  local.set $9
+  f64.store offset=8
   local.get $8
   i32.load
   call $~lib/rt/pure/__release
-  local.get $8
   local.get $9
+  local.get $8
   i32.store
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $8
+  f64.const 0
+  f64.store
+  local.get $8
+  f64.const 0
+  f64.store offset=8
+  local.get $8
   local.get $2
+  f64.store
+  local.get $8
   local.get $3
-  call $assembly/Point/Point#constructor
-  local.set $9
+  f64.store offset=8
   local.get $8
   i32.load offset=4
   call $~lib/rt/pure/__release
-  local.get $8
   local.get $9
+  local.get $8
   i32.store offset=4
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $8
+  f64.const 0
+  f64.store
+  local.get $8
+  f64.const 0
+  f64.store offset=8
+  local.get $8
   local.get $4
+  f64.store
+  local.get $8
   local.get $5
-  call $assembly/Point/Point#constructor
-  local.set $9
+  f64.store offset=8
   local.get $8
   i32.load offset=8
   call $~lib/rt/pure/__release
-  local.get $8
   local.get $9
+  local.get $8
   i32.store offset=8
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $8
+  f64.const 0
+  f64.store
+  local.get $8
+  f64.const 0
+  f64.store offset=8
+  local.get $8
   local.get $6
+  f64.store
+  local.get $8
   local.get $7
-  call $assembly/Point/Point#constructor
-  local.set $9
+  f64.store offset=8
   local.get $8
   i32.load offset=12
   call $~lib/rt/pure/__release
-  local.get $8
   local.get $9
-  i32.store offset=12
   local.get $8
+  i32.store offset=12
+  local.get $9
  )
- (func $~lib/typedarray/Float64Array#__get (; 39 ;) (type $FUNCSIG$dii) (param $0 i32) (param $1 i32) (result f64)
+ (func $~lib/typedarray/Float64Array#__get (; 38 ;) (type $FUNCSIG$dii) (param $0 i32) (param $1 i32) (result f64)
   local.get $1
   local.get $0
   i32.load offset=8
@@ -3053,27 +3080,9 @@
   i32.add
   f64.load
  )
- (func $assembly/Complex/Complex#constructor (; 40 ;) (type $FUNCSIG$idd) (param $0 f64) (param $1 f64) (result i32)
-  (local $2 i32)
-  i32.const 16
-  i32.const 11
-  call $~lib/rt/tlsf/__alloc
-  call $~lib/rt/pure/__retain
-  local.tee $2
-  f64.const 0
-  f64.store
-  local.get $2
-  f64.const 0
-  f64.store offset=8
-  local.get $2
-  local.get $0
-  f64.store
-  local.get $2
-  local.get $1
-  f64.store offset=8
-  local.get $2
- )
- (func $assembly/Complex/Complex#mul (; 41 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/Complex/Complex#mul (; 39 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+  (local $2 f64)
+  (local $3 f64)
   local.get $1
   call $~lib/rt/pure/__retain
   drop
@@ -3095,10 +3104,26 @@
    local.get $1
    f64.load
    f64.mul
+   local.set $2
+   i32.const 16
+   i32.const 11
+   call $~lib/rt/tlsf/__alloc
+   call $~lib/rt/pure/__retain
+   local.tee $0
    f64.const 0
-   call $assembly/Complex/Complex#constructor
+   f64.store
+   local.get $0
+   f64.const 0
+   f64.store offset=8
+   local.get $0
+   local.get $2
+   f64.store
+   local.get $0
+   f64.const 0
+   f64.store offset=8
    local.get $1
    call $~lib/rt/pure/__release
+   local.get $0
    return
   end
   local.get $0
@@ -3112,6 +3137,7 @@
   f64.load offset=8
   f64.mul
   f64.sub
+  local.set $2
   local.get $0
   f64.load
   local.get $1
@@ -3123,11 +3149,28 @@
   f64.load
   f64.mul
   f64.add
-  call $assembly/Complex/Complex#constructor
+  local.set $3
+  i32.const 16
+  i32.const 11
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $0
+  f64.const 0
+  f64.store
+  local.get $0
+  f64.const 0
+  f64.store offset=8
+  local.get $0
+  local.get $2
+  f64.store
+  local.get $0
+  local.get $3
+  f64.store offset=8
   local.get $1
   call $~lib/rt/pure/__release
+  local.get $0
  )
- (func $assembly/Complex/Complex#sqrt (; 42 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $assembly/Complex/Complex#sqrt (; 40 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 f64)
   (local $2 f64)
   (local $3 f64)
@@ -3154,8 +3197,24 @@
    if
     local.get $1
     call $~lib/bindings/Math/sqrt
+    local.set $1
+    i32.const 16
+    i32.const 11
+    call $~lib/rt/tlsf/__alloc
+    call $~lib/rt/pure/__retain
+    local.tee $0
     f64.const 0
-    call $assembly/Complex/Complex#constructor
+    f64.store
+    local.get $0
+    f64.const 0
+    f64.store offset=8
+    local.get $0
+    local.get $1
+    f64.store
+    local.get $0
+    f64.const 0
+    f64.store offset=8
+    local.get $0
     return
    end
    f64.const 0.5
@@ -3177,6 +3236,7 @@
    call $~lib/bindings/Math/sqrt
    f64.div
   end
+  local.set $4
   local.get $1
   f64.const 0
   f64.le
@@ -3209,10 +3269,25 @@
    f64.neg
    local.set $1
   end
+  i32.const 16
+  i32.const 11
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $0
+  f64.const 0
+  f64.store
+  local.get $0
+  f64.const 0
+  f64.store offset=8
+  local.get $0
+  local.get $4
+  f64.store
+  local.get $0
   local.get $1
-  call $assembly/Complex/Complex#constructor
+  f64.store offset=8
+  local.get $0
  )
- (func $assembly/Complex/Complex#div (; 43 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/Complex/Complex#div (; 41 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 f64)
   (local $3 f64)
   (local $4 f64)
@@ -3235,15 +3310,29 @@
   local.tee $3
   f64.eq
   if
+   i32.const 16
+   i32.const 11
+   call $~lib/rt/tlsf/__alloc
+   call $~lib/rt/pure/__retain
+   local.tee $0
+   f64.const 0
+   f64.store
+   local.get $0
+   f64.const 0
+   f64.store offset=8
+   local.get $0
    local.get $4
    local.get $2
    f64.div
+   f64.store
+   local.get $0
    local.get $5
    local.get $2
    f64.div
-   call $assembly/Complex/Complex#constructor
+   f64.store offset=8
    local.get $1
    call $~lib/rt/pure/__release
+   local.get $0
    return
   end
   local.get $2
@@ -3261,6 +3350,17 @@
    local.get $3
    f64.add
    local.set $3
+   i32.const 16
+   i32.const 11
+   call $~lib/rt/tlsf/__alloc
+   call $~lib/rt/pure/__retain
+   local.tee $0
+   f64.const 0
+   f64.store
+   local.get $0
+   f64.const 0
+   f64.store offset=8
+   local.get $0
    local.get $4
    local.get $2
    f64.mul
@@ -3268,6 +3368,8 @@
    f64.add
    local.get $3
    f64.div
+   f64.store
+   local.get $0
    local.get $5
    local.get $2
    f64.mul
@@ -3275,8 +3377,7 @@
    f64.sub
    local.get $3
    f64.div
-   call $assembly/Complex/Complex#constructor
-   local.set $0
+   f64.store offset=8
   else   
    local.get $3
    local.get $3
@@ -3287,6 +3388,17 @@
    local.get $2
    f64.add
    local.set $2
+   i32.const 16
+   i32.const 11
+   call $~lib/rt/tlsf/__alloc
+   call $~lib/rt/pure/__retain
+   local.tee $0
+   f64.const 0
+   f64.store
+   local.get $0
+   f64.const 0
+   f64.store offset=8
+   local.get $0
    local.get $4
    local.get $5
    local.get $3
@@ -3294,6 +3406,8 @@
    f64.add
    local.get $2
    f64.div
+   f64.store
+   local.get $0
    local.get $5
    local.get $4
    local.get $3
@@ -3301,18 +3415,17 @@
    f64.sub
    local.get $2
    f64.div
-   call $assembly/Complex/Complex#constructor
-   local.set $0
+   f64.store offset=8
   end
   local.get $1
   call $~lib/rt/pure/__release
   local.get $0
  )
- (func $assembly/CubicBezier/CubicBezier#inflexionPoints (; 44 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
-  (local $1 i32)
+ (func $assembly/CubicBezier/CubicBezier#inflexionPoints (; 42 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+  (local $1 f64)
   (local $2 i32)
   (local $3 i32)
-  (local $4 i32)
+  (local $4 f64)
   (local $5 i32)
   (local $6 i32)
   (local $7 i32)
@@ -3329,318 +3442,584 @@
   (local $18 i32)
   (local $19 i32)
   (local $20 i32)
+  (local $21 i32)
+  (local $22 i32)
   local.get $0
   i32.load offset=4
-  local.set $3
+  local.set $2
   local.get $0
   i32.load
   call $~lib/rt/pure/__retain
-  local.set $2
-  local.get $3
-  f64.load
-  local.get $2
-  f64.load
-  f64.sub
-  local.get $3
-  f64.load offset=8
-  local.get $2
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
   local.set $3
   local.get $2
+  f64.load
+  local.get $3
+  f64.load
+  f64.sub
+  local.set $4
+  local.get $2
+  f64.load offset=8
+  local.get $3
+  f64.load offset=8
+  f64.sub
+  local.set $1
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $1
+  f64.store offset=8
+  local.get $3
   call $~lib/rt/pure/__release
+  local.get $2
+  local.set $7
   local.get $0
   i32.load offset=8
-  local.set $1
+  local.set $2
   local.get $0
   i32.load offset=4
   call $~lib/rt/pure/__retain
-  local.set $2
-  local.get $1
-  f64.load
+  local.set $3
   local.get $2
   f64.load
-  f64.sub
-  local.get $1
-  f64.load offset=8
-  local.get $2
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $8
-  local.get $2
-  call $~lib/rt/pure/__release
   local.get $3
-  call $~lib/rt/pure/__retain
+  f64.load
+  f64.sub
+  local.set $4
+  local.get $2
+  f64.load offset=8
+  local.get $3
+  f64.load offset=8
+  f64.sub
   local.set $1
-  local.get $8
-  f64.load
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $9
+  f64.const 0
+  f64.store
+  local.get $9
+  f64.const 0
+  f64.store offset=8
+  local.get $9
+  local.get $4
+  f64.store
+  local.get $9
   local.get $1
-  f64.load
-  f64.sub
-  local.get $8
-  f64.load offset=8
-  local.get $1
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.get $1
+  f64.store offset=8
+  local.get $3
   call $~lib/rt/pure/__release
+  local.get $7
+  call $~lib/rt/pure/__retain
+  local.set $3
+  local.get $9
+  f64.load
+  local.get $3
+  f64.load
+  f64.sub
+  local.set $4
+  local.get $9
+  f64.load offset=8
+  local.get $3
+  f64.load offset=8
+  f64.sub
+  local.set $1
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $1
+  f64.store offset=8
+  local.get $3
+  call $~lib/rt/pure/__release
+  local.get $2
+  local.set $8
   local.get $0
   i32.load offset=12
-  local.set $1
+  local.set $2
   local.get $0
   i32.load offset=8
   call $~lib/rt/pure/__retain
-  local.set $0
-  local.get $1
-  f64.load
-  local.get $0
-  f64.load
-  f64.sub
-  local.get $1
-  f64.load offset=8
-  local.get $0
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $9
-  local.get $0
-  call $~lib/rt/pure/__release
-  local.get $3
-  call $~lib/rt/pure/__retain
-  local.set $0
-  local.get $9
-  f64.load
-  local.get $0
-  f64.load
-  f64.sub
-  local.get $9
-  f64.load offset=8
-  local.get $0
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $10
-  local.get $0
-  call $~lib/rt/pure/__release
-  local.tee $0
-  f64.load
-  f64.const 2
-  f64.mul
-  local.get $0
-  f64.load offset=8
-  f64.const 2
-  f64.mul
-  call $assembly/Point/Point#constructor
-  local.set $1
-  local.get $10
-  f64.load
-  local.get $1
-  f64.load
-  f64.sub
-  local.get $10
-  f64.load offset=8
-  local.get $1
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $2
-  local.get $1
-  call $~lib/rt/pure/__release
-  local.get $0
-  f64.load
-  local.get $2
-  f64.load offset=8
-  f64.mul
-  local.get $0
-  f64.load offset=8
+  local.set $3
   local.get $2
   f64.load
-  f64.mul
-  f64.sub
-  f64.const 0
-  call $assembly/Complex/Complex#constructor
-  local.set $7
   local.get $3
   f64.load
-  local.get $2
-  f64.load offset=8
-  f64.mul
-  local.get $3
-  f64.load offset=8
-  local.get $2
-  f64.load
-  f64.mul
   f64.sub
-  f64.const 0
-  call $assembly/Complex/Complex#constructor
-  local.set $6
-  local.get $3
-  f64.load
-  local.get $0
-  f64.load offset=8
-  f64.mul
-  local.get $3
-  f64.load offset=8
-  local.get $0
-  f64.load
-  f64.mul
-  f64.sub
-  f64.const 0
-  call $assembly/Complex/Complex#constructor
-  local.set $14
-  local.get $6
-  f64.load
-  f64.neg
-  local.get $6
-  f64.load offset=8
-  f64.neg
-  call $assembly/Complex/Complex#constructor
-  local.set $1
-  local.get $6
-  local.get $6
-  call $assembly/Complex/Complex#mul
-  local.set $11
-  local.get $7
-  local.get $14
-  call $assembly/Complex/Complex#mul
-  local.tee $15
-  f64.load
-  f64.const 4
-  f64.mul
-  local.get $15
-  f64.load offset=8
-  f64.const 4
-  f64.mul
-  call $assembly/Complex/Complex#constructor
-  local.set $5
-  local.get $11
-  f64.load
-  local.get $5
-  f64.load
-  f64.sub
-  local.get $11
-  f64.load offset=8
-  local.get $5
-  f64.load offset=8
-  f64.sub
-  call $assembly/Complex/Complex#constructor
-  local.set $16
-  local.get $5
-  call $~lib/rt/pure/__release
-  local.get $16
-  call $assembly/Complex/Complex#sqrt
-  local.set $12
-  local.get $7
-  f64.load
-  f64.const 2
-  f64.mul
-  local.get $7
-  f64.load offset=8
-  f64.const 2
-  f64.mul
-  call $assembly/Complex/Complex#constructor
-  local.set $5
-  local.get $12
-  call $~lib/rt/pure/__retain
   local.set $4
-  local.get $1
-  f64.load
-  local.get $4
-  f64.load
-  f64.add
-  local.get $1
+  local.get $2
   f64.load offset=8
-  local.get $4
+  local.get $3
   f64.load offset=8
-  f64.add
-  call $assembly/Complex/Complex#constructor
-  local.set $17
+  f64.sub
+  local.set $1
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $0
+  f64.const 0
+  f64.store
+  local.get $0
+  f64.const 0
+  f64.store offset=8
+  local.get $0
   local.get $4
+  f64.store
+  local.get $0
+  local.get $1
+  f64.store offset=8
+  local.get $3
   call $~lib/rt/pure/__release
-  local.get $17
+  local.get $7
+  call $~lib/rt/pure/__retain
+  local.set $2
+  local.get $0
+  local.tee $19
+  f64.load
+  local.get $2
+  f64.load
+  f64.sub
+  local.set $4
+  local.get $0
+  f64.load offset=8
+  local.get $2
+  f64.load offset=8
+  f64.sub
+  local.set $1
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $0
+  f64.const 0
+  f64.store
+  local.get $0
+  f64.const 0
+  f64.store offset=8
+  local.get $0
+  local.get $4
+  f64.store
+  local.get $0
+  local.get $1
+  f64.store offset=8
+  local.get $2
+  call $~lib/rt/pure/__release
+  local.get $0
+  local.set $2
+  local.get $8
+  f64.load
+  f64.const 2
+  f64.mul
+  local.set $4
+  local.get $8
+  f64.load offset=8
+  f64.const 2
+  f64.mul
+  local.set $1
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $0
+  f64.const 0
+  f64.store
+  local.get $0
+  f64.const 0
+  f64.store offset=8
+  local.get $0
+  local.get $4
+  f64.store
+  local.get $0
+  local.get $1
+  f64.store offset=8
+  local.get $2
+  f64.load
+  local.get $0
+  local.tee $3
+  f64.load
+  f64.sub
+  local.set $4
+  local.get $2
+  f64.load offset=8
+  local.get $0
+  f64.load offset=8
+  f64.sub
+  local.set $1
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $0
+  f64.const 0
+  f64.store
+  local.get $0
+  f64.const 0
+  f64.store offset=8
+  local.get $0
+  local.get $4
+  f64.store
+  local.get $0
+  local.get $1
+  f64.store offset=8
+  local.get $3
+  call $~lib/rt/pure/__release
+  local.get $8
+  f64.load
+  local.get $0
+  local.tee $14
+  f64.load offset=8
+  f64.mul
+  local.get $8
+  f64.load offset=8
+  local.get $0
+  f64.load
+  f64.mul
+  f64.sub
+  local.set $1
+  i32.const 16
+  i32.const 11
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $0
+  f64.const 0
+  f64.store
+  local.get $0
+  f64.const 0
+  f64.store offset=8
+  local.get $0
+  local.get $1
+  f64.store
+  local.get $0
+  f64.const 0
+  f64.store offset=8
+  local.get $0
+  local.set $13
+  local.get $7
+  f64.load
+  local.get $14
+  f64.load offset=8
+  f64.mul
+  local.get $7
+  f64.load offset=8
+  local.get $14
+  f64.load
+  f64.mul
+  f64.sub
+  local.set $1
+  i32.const 16
+  i32.const 11
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $0
+  f64.const 0
+  f64.store
+  local.get $0
+  f64.const 0
+  f64.store offset=8
+  local.get $0
+  local.get $1
+  f64.store
+  local.get $0
+  f64.const 0
+  f64.store offset=8
+  local.get $7
+  f64.load
+  local.get $8
+  f64.load offset=8
+  f64.mul
+  local.get $7
+  f64.load offset=8
+  local.get $8
+  f64.load
+  f64.mul
+  f64.sub
+  local.set $1
+  i32.const 16
+  i32.const 11
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $11
+  f64.const 0
+  f64.store
+  local.get $11
+  f64.const 0
+  f64.store offset=8
+  local.get $11
+  local.get $1
+  f64.store
+  local.get $11
+  f64.const 0
+  f64.store offset=8
+  local.get $0
+  local.tee $20
+  f64.load
+  f64.neg
+  local.set $4
+  local.get $0
+  f64.load offset=8
+  f64.neg
+  local.set $1
+  i32.const 16
+  i32.const 11
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $6
+  f64.const 0
+  f64.store
+  local.get $6
+  f64.const 0
+  f64.store offset=8
+  local.get $6
+  local.get $4
+  f64.store
+  local.get $6
+  local.get $1
+  f64.store offset=8
+  local.get $0
+  local.get $0
+  call $assembly/Complex/Complex#mul
+  local.tee $21
+  local.set $3
+  local.get $13
+  local.get $11
+  call $assembly/Complex/Complex#mul
+  local.tee $16
+  f64.load
+  f64.const 4
+  f64.mul
+  local.set $4
+  local.get $16
+  f64.load offset=8
+  f64.const 4
+  f64.mul
+  local.set $1
+  i32.const 16
+  i32.const 11
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $0
+  f64.const 0
+  f64.store
+  local.get $0
+  f64.const 0
+  f64.store offset=8
+  local.get $0
+  local.get $4
+  f64.store
+  local.get $0
+  local.get $1
+  f64.store offset=8
+  local.get $3
+  f64.load
+  local.get $0
+  f64.load
+  f64.sub
+  local.set $4
+  local.get $3
+  f64.load offset=8
+  local.get $0
+  f64.load offset=8
+  f64.sub
+  local.set $1
+  i32.const 16
+  i32.const 11
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $3
+  f64.const 0
+  f64.store
+  local.get $3
+  f64.const 0
+  f64.store offset=8
+  local.get $3
+  local.get $4
+  f64.store
+  local.get $3
+  local.get $1
+  f64.store offset=8
+  local.get $0
+  call $~lib/rt/pure/__release
+  local.get $3
+  call $assembly/Complex/Complex#sqrt
+  local.set $15
+  local.get $13
+  f64.load
+  f64.const 2
+  f64.mul
+  local.set $4
+  local.get $13
+  f64.load offset=8
+  f64.const 2
+  f64.mul
+  local.set $1
+  i32.const 16
+  i32.const 11
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $10
+  f64.const 0
+  f64.store
+  local.get $10
+  f64.const 0
+  f64.store offset=8
+  local.get $10
+  local.get $4
+  f64.store
+  local.get $10
+  local.get $1
+  f64.store offset=8
+  local.get $15
+  call $~lib/rt/pure/__retain
+  local.set $5
+  local.get $6
+  f64.load
   local.get $5
+  f64.load
+  f64.add
+  local.set $4
+  local.get $6
+  f64.load offset=8
+  local.get $5
+  f64.load offset=8
+  f64.add
+  local.set $1
+  i32.const 16
+  i32.const 11
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $0
+  f64.const 0
+  f64.store
+  local.get $0
+  f64.const 0
+  f64.store offset=8
+  local.get $0
+  local.get $4
+  f64.store
+  local.get $0
+  local.get $1
+  f64.store offset=8
+  local.get $5
+  call $~lib/rt/pure/__release
+  local.get $0
+  local.get $10
+  call $assembly/Complex/Complex#div
+  local.set $17
+  local.get $15
+  call $~lib/rt/pure/__retain
+  local.set $5
+  local.get $6
+  f64.load
+  local.get $5
+  f64.load
+  f64.sub
+  local.set $4
+  local.get $6
+  f64.load offset=8
+  local.get $5
+  f64.load offset=8
+  f64.sub
+  local.set $1
+  i32.const 16
+  i32.const 11
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $12
+  f64.const 0
+  f64.store
+  local.get $12
+  f64.const 0
+  f64.store offset=8
+  local.get $12
+  local.get $4
+  f64.store
+  local.get $12
+  local.get $1
+  f64.store offset=8
+  local.get $5
+  call $~lib/rt/pure/__release
+  local.get $12
+  local.get $10
   call $assembly/Complex/Complex#div
   local.set $18
-  local.get $12
-  call $~lib/rt/pure/__retain
-  local.set $4
-  local.get $1
-  f64.load
-  local.get $4
-  f64.load
-  f64.sub
-  local.get $1
-  f64.load offset=8
-  local.get $4
-  f64.load offset=8
-  f64.sub
-  call $assembly/Complex/Complex#constructor
-  local.set $19
-  local.get $4
-  call $~lib/rt/pure/__release
-  local.get $19
-  local.get $5
-  call $assembly/Complex/Complex#div
-  local.set $4
   i32.const 2
   i32.const 12
   i32.const 0
   call $~lib/rt/__allocArray
-  local.tee $13
+  local.tee $22
   i32.load offset=4
-  local.tee $20
-  local.get $18
+  local.tee $5
+  local.get $17
   call $~lib/rt/pure/__retain
   i32.store
-  local.get $20
-  local.get $4
+  local.get $5
+  local.get $18
   call $~lib/rt/pure/__retain
   i32.store offset=4
-  local.get $13
+  local.get $22
   call $~lib/rt/pure/__retain
-  local.get $3
-  call $~lib/rt/pure/__release
-  local.get $8
-  call $~lib/rt/pure/__release
-  local.get $0
+  local.get $7
   call $~lib/rt/pure/__release
   local.get $9
   call $~lib/rt/pure/__release
-  local.get $10
-  call $~lib/rt/pure/__release
-  local.get $2
-  call $~lib/rt/pure/__release
-  local.get $7
-  call $~lib/rt/pure/__release
-  local.get $6
-  call $~lib/rt/pure/__release
-  local.get $14
-  call $~lib/rt/pure/__release
-  local.get $1
-  call $~lib/rt/pure/__release
-  local.get $11
-  call $~lib/rt/pure/__release
-  local.get $15
-  call $~lib/rt/pure/__release
-  local.get $16
-  call $~lib/rt/pure/__release
-  local.get $12
-  call $~lib/rt/pure/__release
-  local.get $5
-  call $~lib/rt/pure/__release
-  local.get $17
-  call $~lib/rt/pure/__release
-  local.get $18
+  local.get $8
   call $~lib/rt/pure/__release
   local.get $19
   call $~lib/rt/pure/__release
-  local.get $4
+  local.get $2
+  call $~lib/rt/pure/__release
+  local.get $14
+  call $~lib/rt/pure/__release
+  local.get $13
+  call $~lib/rt/pure/__release
+  local.get $20
+  call $~lib/rt/pure/__release
+  local.get $11
+  call $~lib/rt/pure/__release
+  local.get $6
+  call $~lib/rt/pure/__release
+  local.get $21
+  call $~lib/rt/pure/__release
+  local.get $16
+  call $~lib/rt/pure/__release
+  local.get $3
+  call $~lib/rt/pure/__release
+  local.get $15
+  call $~lib/rt/pure/__release
+  local.get $10
+  call $~lib/rt/pure/__release
+  local.get $0
+  call $~lib/rt/pure/__release
+  local.get $17
+  call $~lib/rt/pure/__release
+  local.get $12
+  call $~lib/rt/pure/__release
+  local.get $18
   call $~lib/rt/pure/__release
  )
- (func $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get (; 45 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get (; 43 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $0
   i32.load offset=4
   local.get $1
@@ -3650,10 +4029,10 @@
   i32.load
   call $~lib/rt/pure/__retain
  )
- (func $assembly/CubicBezier/CubicBezier#split (; 46 ;) (type $FUNCSIG$iid) (param $0 i32) (param $1 f64) (result i32)
+ (func $assembly/CubicBezier/CubicBezier#split (; 44 ;) (type $FUNCSIG$iid) (param $0 i32) (param $1 f64) (result i32)
   (local $2 i32)
-  (local $3 i32)
-  (local $4 i32)
+  (local $3 f64)
+  (local $4 f64)
   (local $5 i32)
   (local $6 i32)
   (local $7 i32)
@@ -3666,314 +4045,623 @@
   (local $14 i32)
   (local $15 i32)
   (local $16 i32)
+  (local $17 i32)
+  (local $18 i32)
   local.get $0
   i32.load
-  local.set $2
+  local.set $5
   local.get $0
   i32.load offset=4
-  local.set $3
+  local.set $2
   local.get $0
   i32.load
   call $~lib/rt/pure/__retain
-  local.set $7
-  local.get $3
+  local.set $6
+  local.get $2
   f64.load
-  local.get $7
+  local.get $6
   f64.load
   f64.sub
-  local.get $3
+  local.set $4
+  local.get $2
   f64.load offset=8
-  local.get $7
+  local.get $6
   f64.load offset=8
   f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $9
-  local.get $7
-  call $~lib/rt/pure/__release
-  local.get $9
-  f64.load
-  local.get $1
-  f64.mul
-  local.get $9
-  f64.load offset=8
-  local.get $1
-  f64.mul
-  call $assembly/Point/Point#constructor
   local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
   local.get $2
-  f64.load
-  local.get $3
-  f64.load
-  f64.add
+  f64.const 0
+  f64.store offset=8
   local.get $2
-  f64.load offset=8
+  local.get $4
+  f64.store
+  local.get $2
   local.get $3
-  f64.load offset=8
-  f64.add
-  call $assembly/Point/Point#constructor
-  local.set $7
-  local.get $3
+  f64.store offset=8
+  local.get $6
   call $~lib/rt/pure/__release
+  local.get $2
+  local.tee $14
+  f64.load
+  local.get $1
+  f64.mul
+  local.set $4
+  local.get $2
+  f64.load offset=8
+  local.get $1
+  f64.mul
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $6
+  f64.const 0
+  f64.store
+  local.get $6
+  f64.const 0
+  f64.store offset=8
+  local.get $6
+  local.get $4
+  f64.store
+  local.get $6
+  local.get $3
+  f64.store offset=8
+  local.get $5
+  f64.load
+  local.get $6
+  f64.load
+  f64.add
+  local.set $4
+  local.get $5
+  f64.load offset=8
+  local.get $6
+  f64.load offset=8
+  f64.add
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
+  local.get $6
+  call $~lib/rt/pure/__release
+  local.get $2
   local.get $0
   i32.load offset=4
-  local.set $6
+  local.set $8
   local.get $0
   i32.load offset=8
   local.set $2
   local.get $0
   i32.load offset=4
   call $~lib/rt/pure/__retain
+  local.set $5
+  local.get $2
+  f64.load
+  local.get $5
+  f64.load
+  f64.sub
+  local.set $4
+  local.get $2
+  f64.load offset=8
+  local.get $5
+  f64.load offset=8
+  f64.sub
   local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
   local.get $2
-  f64.load
-  local.get $3
-  f64.load
-  f64.sub
+  f64.const 0
+  f64.store offset=8
   local.get $2
-  f64.load offset=8
+  local.get $4
+  f64.store
+  local.get $2
   local.get $3
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $10
-  local.get $3
+  f64.store offset=8
+  local.get $5
   call $~lib/rt/pure/__release
-  local.get $10
+  local.get $2
+  local.tee $15
   f64.load
   local.get $1
   f64.mul
-  local.get $10
+  local.set $4
+  local.get $2
   f64.load offset=8
   local.get $1
   f64.mul
-  call $assembly/Point/Point#constructor
-  local.set $2
-  local.get $6
-  f64.load
-  local.get $2
-  f64.load
-  f64.add
-  local.get $6
-  f64.load offset=8
-  local.get $2
-  f64.load offset=8
-  f64.add
-  call $assembly/Point/Point#constructor
   local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
   local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
+  local.get $8
+  f64.load
+  local.get $2
+  local.tee $5
+  f64.load
+  f64.add
+  local.set $4
+  local.get $8
+  f64.load offset=8
+  local.get $2
+  f64.load offset=8
+  f64.add
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
+  local.get $5
   call $~lib/rt/pure/__release
+  local.get $2
+  local.set $5
   local.get $0
   i32.load offset=8
-  local.set $6
+  local.set $12
   local.get $0
   i32.load offset=12
-  local.set $4
+  local.set $2
   local.get $0
   i32.load offset=8
   call $~lib/rt/pure/__retain
-  local.set $2
-  local.get $4
-  f64.load
-  local.get $2
-  f64.load
-  f64.sub
-  local.get $4
-  f64.load offset=8
-  local.get $2
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $11
-  local.get $2
-  call $~lib/rt/pure/__release
-  local.get $11
-  f64.load
-  local.get $1
-  f64.mul
-  local.get $11
-  f64.load offset=8
-  local.get $1
-  f64.mul
-  call $assembly/Point/Point#constructor
-  local.set $2
-  local.get $6
-  f64.load
-  local.get $2
-  f64.load
-  f64.add
-  local.get $6
-  f64.load offset=8
-  local.get $2
-  f64.load offset=8
-  f64.add
-  call $assembly/Point/Point#constructor
-  local.set $6
-  local.get $2
-  call $~lib/rt/pure/__release
-  local.get $7
-  call $~lib/rt/pure/__retain
-  local.set $2
-  local.get $3
-  f64.load
-  local.get $2
-  f64.load
-  f64.sub
-  local.get $3
-  f64.load offset=8
-  local.get $2
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $12
-  local.get $2
-  call $~lib/rt/pure/__release
-  local.get $12
-  f64.load
-  local.get $1
-  f64.mul
-  local.get $12
-  f64.load offset=8
-  local.get $1
-  f64.mul
-  call $assembly/Point/Point#constructor
-  local.set $4
-  local.get $7
-  f64.load
-  local.get $4
-  f64.load
-  f64.add
-  local.get $7
-  f64.load offset=8
-  local.get $4
-  f64.load offset=8
-  f64.add
-  call $assembly/Point/Point#constructor
-  local.set $2
-  local.get $4
-  call $~lib/rt/pure/__release
-  local.get $3
-  call $~lib/rt/pure/__retain
-  local.set $4
-  local.get $6
-  f64.load
-  local.get $4
-  f64.load
-  f64.sub
-  local.get $6
-  f64.load offset=8
-  local.get $4
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $13
-  local.get $4
-  call $~lib/rt/pure/__release
-  local.get $13
-  f64.load
-  local.get $1
-  f64.mul
-  local.get $13
-  f64.load offset=8
-  local.get $1
-  f64.mul
-  call $assembly/Point/Point#constructor
-  local.set $5
-  local.get $3
-  f64.load
-  local.get $5
-  f64.load
-  f64.add
-  local.get $3
-  f64.load offset=8
-  local.get $5
-  f64.load offset=8
-  f64.add
-  call $assembly/Point/Point#constructor
-  local.set $4
-  local.get $5
-  call $~lib/rt/pure/__release
-  local.get $2
-  call $~lib/rt/pure/__retain
-  local.set $5
-  local.get $4
-  f64.load
-  local.get $5
-  f64.load
-  f64.sub
-  local.get $4
-  f64.load offset=8
-  local.get $5
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $14
-  local.get $5
-  call $~lib/rt/pure/__release
-  local.get $14
-  f64.load
-  local.get $1
-  f64.mul
-  local.get $14
-  f64.load offset=8
-  local.get $1
-  f64.mul
-  call $assembly/Point/Point#constructor
   local.set $8
   local.get $2
   f64.load
   local.get $8
   f64.load
-  f64.add
+  f64.sub
+  local.set $4
   local.get $2
   f64.load offset=8
   local.get $8
   f64.load offset=8
-  f64.add
-  call $assembly/Point/Point#constructor
-  local.set $5
+  f64.sub
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
   local.get $8
+  call $~lib/rt/pure/__release
+  local.get $2
+  local.tee $16
+  f64.load
+  local.get $1
+  f64.mul
+  local.set $4
+  local.get $2
+  f64.load offset=8
+  local.get $1
+  f64.mul
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
+  local.get $12
+  f64.load
+  local.get $2
+  local.tee $8
+  f64.load
+  f64.add
+  local.set $4
+  local.get $12
+  f64.load offset=8
+  local.get $2
+  f64.load offset=8
+  f64.add
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
+  local.get $8
+  call $~lib/rt/pure/__release
+  local.get $2
+  local.set $9
+  local.tee $10
+  call $~lib/rt/pure/__retain
+  local.set $6
+  local.get $5
+  f64.load
+  local.get $6
+  f64.load
+  f64.sub
+  local.set $4
+  local.get $5
+  f64.load offset=8
+  local.get $6
+  f64.load offset=8
+  f64.sub
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
+  local.get $6
+  call $~lib/rt/pure/__release
+  local.get $2
+  local.tee $12
+  f64.load
+  local.get $1
+  f64.mul
+  local.set $4
+  local.get $2
+  f64.load offset=8
+  local.get $1
+  f64.mul
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
+  local.get $10
+  f64.load
+  local.get $2
+  local.tee $6
+  f64.load
+  f64.add
+  local.set $4
+  local.get $10
+  f64.load offset=8
+  local.get $2
+  f64.load offset=8
+  f64.add
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
+  local.get $6
+  call $~lib/rt/pure/__release
+  local.get $2
+  local.get $5
+  local.tee $13
+  call $~lib/rt/pure/__retain
+  local.set $5
+  local.get $9
+  f64.load
+  local.get $5
+  f64.load
+  f64.sub
+  local.set $4
+  local.get $9
+  f64.load offset=8
+  local.get $5
+  f64.load offset=8
+  f64.sub
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
+  local.get $5
+  call $~lib/rt/pure/__release
+  local.get $2
+  local.tee $8
+  f64.load
+  local.get $1
+  f64.mul
+  local.set $4
+  local.get $2
+  f64.load offset=8
+  local.get $1
+  f64.mul
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
+  local.get $13
+  f64.load
+  local.get $2
+  local.tee $5
+  f64.load
+  f64.add
+  local.set $4
+  local.get $13
+  f64.load offset=8
+  local.get $2
+  f64.load offset=8
+  f64.add
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
+  local.get $5
+  call $~lib/rt/pure/__release
+  local.get $2
+  local.set $11
+  local.tee $5
+  call $~lib/rt/pure/__retain
+  local.set $2
+  local.get $11
+  f64.load
+  local.get $2
+  f64.load
+  f64.sub
+  local.set $4
+  local.get $11
+  f64.load offset=8
+  local.get $2
+  f64.load offset=8
+  f64.sub
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $7
+  f64.const 0
+  f64.store
+  local.get $7
+  f64.const 0
+  f64.store offset=8
+  local.get $7
+  local.get $4
+  f64.store
+  local.get $7
+  local.get $3
+  f64.store offset=8
+  local.get $2
+  call $~lib/rt/pure/__release
+  local.get $7
+  local.tee $6
+  f64.load
+  local.get $1
+  f64.mul
+  local.set $3
+  local.get $6
+  f64.load offset=8
+  local.get $1
+  f64.mul
+  local.set $1
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $3
+  f64.store
+  local.get $2
+  local.get $1
+  f64.store offset=8
+  local.get $5
+  f64.load
+  local.get $2
+  f64.load
+  f64.add
+  local.set $3
+  local.get $5
+  f64.load offset=8
+  local.get $2
+  f64.load offset=8
+  f64.add
+  local.set $1
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $7
+  f64.const 0
+  f64.store
+  local.get $7
+  f64.const 0
+  f64.store offset=8
+  local.get $7
+  local.get $3
+  f64.store
+  local.get $7
+  local.get $1
+  f64.store offset=8
+  local.get $2
   call $~lib/rt/pure/__release
   i32.const 2
   i32.const 10
   i32.const 0
   call $~lib/rt/__allocArray
-  local.tee $8
+  local.tee $17
   i32.load offset=4
-  local.tee $15
+  local.tee $2
   local.get $0
   i32.load
   f64.load
   local.get $0
   i32.load
   f64.load offset=8
-  local.get $7
+  local.get $10
   f64.load
-  local.get $7
-  f64.load offset=8
-  local.get $2
-  f64.load
-  local.get $2
+  local.get $10
   f64.load offset=8
   local.get $5
   f64.load
   local.get $5
+  f64.load offset=8
+  local.get $7
+  f64.load
+  local.get $7
   f64.load offset=8
   call $assembly/CubicBezier/CubicBezier#constructor
-  local.tee $16
+  local.tee $18
   call $~lib/rt/pure/__retain
   i32.store
-  local.get $15
-  local.get $5
+  local.get $2
+  local.get $7
   f64.load
-  local.get $5
+  local.get $7
   f64.load offset=8
-  local.get $4
+  local.get $11
   f64.load
-  local.get $4
+  local.get $11
   f64.load offset=8
-  local.get $6
+  local.get $9
   f64.load
-  local.get $6
+  local.get $9
   f64.load offset=8
   local.get $0
   i32.load offset=12
@@ -3982,41 +4670,41 @@
   i32.load offset=12
   f64.load offset=8
   call $assembly/CubicBezier/CubicBezier#constructor
-  local.tee $0
+  local.tee $2
   call $~lib/rt/pure/__retain
   i32.store offset=4
-  local.get $8
+  local.get $17
   call $~lib/rt/pure/__retain
-  local.get $9
-  call $~lib/rt/pure/__release
-  local.get $7
+  local.get $14
   call $~lib/rt/pure/__release
   local.get $10
   call $~lib/rt/pure/__release
-  local.get $3
+  local.get $15
+  call $~lib/rt/pure/__release
+  local.get $13
+  call $~lib/rt/pure/__release
+  local.get $16
+  call $~lib/rt/pure/__release
+  local.get $9
+  call $~lib/rt/pure/__release
+  local.get $12
+  call $~lib/rt/pure/__release
+  local.get $5
+  call $~lib/rt/pure/__release
+  local.get $8
   call $~lib/rt/pure/__release
   local.get $11
   call $~lib/rt/pure/__release
   local.get $6
   call $~lib/rt/pure/__release
-  local.get $12
+  local.get $7
+  call $~lib/rt/pure/__release
+  local.get $18
   call $~lib/rt/pure/__release
   local.get $2
   call $~lib/rt/pure/__release
-  local.get $13
-  call $~lib/rt/pure/__release
-  local.get $4
-  call $~lib/rt/pure/__release
-  local.get $14
-  call $~lib/rt/pure/__release
-  local.get $5
-  call $~lib/rt/pure/__release
-  local.get $16
-  call $~lib/rt/pure/__release
-  local.get $0
-  call $~lib/rt/pure/__release
  )
- (func $~lib/rt/tlsf/reallocateBlock (; 47 ;) (type $FUNCSIG$iiii) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $~lib/rt/tlsf/reallocateBlock (; 45 ;) (type $FUNCSIG$iiii) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -4136,7 +4824,7 @@
   call $~lib/rt/tlsf/insertBlock
   local.get $3
  )
- (func $~lib/rt/tlsf/__realloc (; 48 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/rt/tlsf/__realloc (; 46 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   global.get $~lib/rt/tlsf/ROOT
   i32.eqz
   if
@@ -4172,7 +4860,7 @@
   i32.const 16
   i32.add
  )
- (func $~lib/array/ensureSize (; 49 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/array/ensureSize (; 47 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -4227,7 +4915,7 @@
    i32.store offset=8
   end
  )
- (func $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push (; 50 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push (; 48 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   local.get $1
@@ -4256,7 +4944,7 @@
   local.get $1
   call $~lib/rt/pure/__release
  )
- (func $~lib/array/Array<assembly/CubicBezier/CubicBezier>#pop (; 51 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/array/Array<assembly/CubicBezier/CubicBezier>#pop (; 49 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   local.get $0
@@ -4287,7 +4975,7 @@
   local.get $1
   i32.store offset=12
  )
- (func $assembly/Line/Line#constructor (; 52 ;) (type $FUNCSIG$iiid) (param $0 i32) (param $1 i32) (param $2 f64) (result i32)
+ (func $assembly/Line/Line#constructor (; 50 ;) (type $FUNCSIG$iiid) (param $0 i32) (param $1 i32) (param $2 f64) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -4370,22 +5058,24 @@
   call $~lib/rt/pure/__release
   local.get $4
  )
- (func $assembly/Line/Line.verticalIntersection (; 53 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
-  (local $2 f64)
+ (func $assembly/Line/Line.verticalIntersection (; 51 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+  (local $2 i32)
   (local $3 f64)
-  (local $4 i32)
+  (local $4 f64)
   local.get $0
   call $~lib/rt/pure/__retain
   drop
   local.get $1
   call $~lib/rt/pure/__retain
   drop
-  local.get $1
-  f64.load offset=8
   local.get $0
   i32.load
   f64.load
-  local.tee $2
+  local.tee $3
+  local.set $4
+  local.get $1
+  f64.load offset=8
+  local.get $3
   local.get $1
   i32.load
   f64.load
@@ -4396,15 +5086,29 @@
   f64.load offset=8
   f64.add
   local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
   local.get $2
   local.get $3
-  call $assembly/Point/Point#constructor
+  f64.store offset=8
   local.get $0
   call $~lib/rt/pure/__release
   local.get $1
   call $~lib/rt/pure/__release
+  local.get $2
  )
- (func $assembly/Line/Line#intersection (; 54 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/Line/Line#intersection (; 52 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 f64)
   (local $3 f64)
   local.get $1
@@ -4415,20 +5119,22 @@
   local.tee $2
   local.get $2
   f64.ne
-  if (result i32)
+  if
    local.get $0
    local.get $1
    call $assembly/Line/Line.verticalIntersection
+   local.set $0
   else   
    local.get $1
    f64.load offset=8
    local.tee $2
    local.get $2
    f64.ne
-   if (result i32)
+   if
     local.get $1
     local.get $0
     call $assembly/Line/Line.verticalIntersection
+    local.set $0
    else    
     local.get $0
     f64.load offset=8
@@ -4473,15 +5179,29 @@
     f64.load offset=8
     f64.add
     local.set $3
+    i32.const 16
+    i32.const 6
+    call $~lib/rt/tlsf/__alloc
+    call $~lib/rt/pure/__retain
+    local.tee $0
+    f64.const 0
+    f64.store
+    local.get $0
+    f64.const 0
+    f64.store offset=8
+    local.get $0
     local.get $2
+    f64.store
+    local.get $0
     local.get $3
-    call $assembly/Point/Point#constructor
+    f64.store offset=8
    end
   end
   local.get $1
   call $~lib/rt/pure/__release
+  local.get $0
  )
- (func $assembly/Line/Line.createPerpendicularAt (; 55 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/Line/Line.createPerpendicularAt (; 53 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 f64)
@@ -4558,7 +5278,7 @@
   local.get $1
   call $~lib/rt/pure/__release
  )
- (func $assembly/Arc/Arc#constructor (; 56 ;) (type $FUNCSIG$iidddiii) (param $0 i32) (param $1 f64) (param $2 f64) (param $3 f64) (param $4 i32) (param $5 i32) (param $6 i32) (result i32)
+ (func $assembly/Arc/Arc#constructor (; 54 ;) (type $FUNCSIG$iidddiii) (param $0 i32) (param $1 f64) (param $2 f64) (param $3 f64) (param $4 i32) (param $5 i32) (param $6 i32) (result i32)
   (local $7 i32)
   (local $8 i32)
   local.get $0
@@ -4660,17 +5380,17 @@
   call $~lib/rt/pure/__release
   local.get $7
  )
- (func $assembly/BiArc/BiArc#constructor (; 57 ;) (type $FUNCSIG$iiiiii) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (result i32)
-  (local $5 i32)
-  (local $6 f64)
-  (local $7 i32)
+ (func $assembly/BiArc/BiArc#constructor (; 55 ;) (type $FUNCSIG$iiiiii) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (result i32)
+  (local $5 f64)
+  (local $6 i32)
+  (local $7 f64)
   (local $8 i32)
   (local $9 i32)
   (local $10 i32)
   (local $11 i32)
   (local $12 i32)
-  (local $13 f64)
-  (local $14 f64)
+  (local $13 i32)
+  (local $14 i32)
   (local $15 i32)
   (local $16 i32)
   (local $17 i32)
@@ -4679,16 +5399,28 @@
   (local $20 i32)
   (local $21 i32)
   (local $22 i32)
-  (local $23 i32)
+  (local $23 f64)
   (local $24 i32)
   (local $25 i32)
-  (local $26 f64)
+  (local $26 i32)
   (local $27 i32)
   (local $28 i32)
   (local $29 f64)
   (local $30 f64)
   (local $31 f64)
-  (local $32 i32)
+  (local $32 f64)
+  (local $33 f64)
+  (local $34 f64)
+  (local $35 f64)
+  (local $36 f64)
+  (local $37 f64)
+  (local $38 f64)
+  (local $39 f64)
+  (local $40 f64)
+  (local $41 f64)
+  (local $42 f64)
+  (local $43 f64)
+  (local $44 f64)
   local.get $0
   call $~lib/rt/pure/__retain
   drop
@@ -4704,439 +5436,653 @@
   local.get $4
   call $~lib/rt/pure/__retain
   drop
+  local.get $4
+  f64.load
+  local.set $31
+  local.get $0
+  f64.load
+  local.set $32
+  local.get $4
+  f64.load offset=8
+  local.set $33
+  local.get $0
+  f64.load offset=8
+  local.set $34
+  local.get $2
+  f64.load
+  local.set $35
+  local.get $4
+  f64.load
+  local.set $36
+  local.get $2
+  f64.load offset=8
+  local.set $37
+  local.get $4
+  f64.load offset=8
+  local.set $38
+  local.get $0
+  f64.load
+  local.set $39
+  local.get $2
+  f64.load
+  local.set $40
+  local.get $0
+  f64.load offset=8
+  local.set $41
+  local.get $2
+  f64.load offset=8
+  local.set $42
+  local.get $1
+  call $~lib/rt/pure/__retain
+  local.set $8
+  local.get $0
+  f64.load
+  local.get $8
+  f64.load
+  f64.add
+  local.set $7
+  local.get $0
+  f64.load offset=8
+  local.get $8
+  f64.load offset=8
+  f64.add
+  local.set $5
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $20
   f64.const 0
-  local.get $4
-  f64.load
-  local.get $0
-  f64.load
-  f64.sub
-  local.get $4
-  f64.load offset=8
-  local.get $0
-  f64.load offset=8
-  f64.add
-  f64.mul
-  f64.add
-  local.get $2
-  f64.load
-  local.get $4
-  f64.load
-  f64.sub
-  local.get $2
-  f64.load offset=8
-  local.get $4
-  f64.load offset=8
-  f64.add
-  f64.mul
-  f64.add
-  local.get $0
-  f64.load
-  local.get $2
-  f64.load
-  f64.sub
-  local.get $0
-  f64.load offset=8
-  local.get $2
-  f64.load offset=8
-  f64.add
-  f64.mul
-  f64.add
-  local.get $1
-  call $~lib/rt/pure/__retain
-  local.set $8
-  local.get $0
-  f64.load
-  local.get $8
-  f64.load
-  f64.add
-  local.get $0
-  f64.load offset=8
-  local.get $8
-  f64.load offset=8
-  f64.add
-  call $assembly/Point/Point#constructor
-  local.set $21
+  f64.store
+  local.get $20
+  f64.const 0
+  f64.store offset=8
+  local.get $20
+  local.get $7
+  f64.store
+  local.get $20
+  local.get $5
+  f64.store offset=8
   local.get $8
   call $~lib/rt/pure/__release
   local.get $0
-  local.get $21
-  call $assembly/Line/Line.createPerpendicularAt
-  local.set $22
-  local.get $3
-  call $~lib/rt/pure/__retain
-  local.set $5
-  local.get $2
-  f64.load
-  local.get $5
-  f64.load
-  f64.add
-  local.get $2
-  f64.load offset=8
-  local.get $5
-  f64.load offset=8
-  f64.add
-  call $assembly/Point/Point#constructor
-  local.set $8
-  local.get $5
-  call $~lib/rt/pure/__release
-  local.get $2
-  local.get $8
-  call $assembly/Line/Line.createPerpendicularAt
-  local.set $23
-  local.get $4
-  call $~lib/rt/pure/__retain
-  local.set $5
-  local.get $0
-  f64.load
-  local.get $5
-  f64.load
-  f64.add
-  local.get $0
-  f64.load offset=8
-  local.get $5
-  f64.load offset=8
-  f64.add
-  call $assembly/Point/Point#constructor
-  local.set $15
-  local.get $5
-  call $~lib/rt/pure/__release
-  local.get $15
-  f64.load
-  f64.const 2
-  f64.div
-  local.get $15
-  f64.load offset=8
-  f64.const 2
-  f64.div
-  call $assembly/Point/Point#constructor
-  local.tee $27
-  local.get $4
-  call $assembly/Line/Line.createPerpendicularAt
-  local.set $24
-  local.get $4
-  call $~lib/rt/pure/__retain
-  local.set $5
-  local.get $2
-  f64.load
-  local.get $5
-  f64.load
-  f64.add
-  local.get $2
-  f64.load offset=8
-  local.get $5
-  f64.load offset=8
-  f64.add
-  call $assembly/Point/Point#constructor
-  local.set $16
-  local.get $5
-  call $~lib/rt/pure/__release
-  local.get $16
-  f64.load
-  f64.const 2
-  f64.div
-  local.get $16
-  f64.load offset=8
-  f64.const 2
-  f64.div
-  call $assembly/Point/Point#constructor
-  local.tee $28
-  local.get $4
+  local.get $20
   call $assembly/Line/Line.createPerpendicularAt
   local.set $25
-  local.get $22
-  local.get $24
-  call $assembly/Line/Line#intersection
-  local.set $9
-  local.get $23
-  local.get $25
-  call $assembly/Line/Line#intersection
-  local.set $10
-  local.get $0
+  local.get $3
   call $~lib/rt/pure/__retain
-  local.set $5
-  local.get $9
+  local.set $8
+  local.get $2
   f64.load
-  local.get $5
+  local.get $8
   f64.load
-  f64.sub
-  local.get $9
-  f64.load offset=8
-  local.get $5
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $11
-  local.get $5
-  call $~lib/rt/pure/__release
-  local.get $11
-  f64.load
-  local.get $11
-  f64.load
-  f64.mul
-  local.get $11
-  f64.load offset=8
-  local.get $11
-  f64.load offset=8
-  f64.mul
   f64.add
-  call $~lib/bindings/Math/sqrt
-  local.set $29
+  local.set $7
   local.get $2
-  call $~lib/rt/pure/__retain
-  local.set $5
-  local.get $10
-  f64.load
-  local.get $5
-  f64.load
-  f64.sub
-  local.get $10
   f64.load offset=8
-  local.get $5
+  local.get $8
   f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $12
-  local.get $5
-  call $~lib/rt/pure/__release
-  local.get $12
-  f64.load
-  local.get $12
-  f64.load
-  f64.mul
-  local.get $12
-  f64.load offset=8
-  local.get $12
-  f64.load offset=8
-  f64.mul
   f64.add
-  call $~lib/bindings/Math/sqrt
-  local.set $30
-  local.get $9
-  call $~lib/rt/pure/__retain
   local.set $5
-  local.get $0
-  f64.load
-  local.get $5
-  f64.load
-  f64.sub
-  local.get $0
-  f64.load offset=8
-  local.get $5
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $17
-  local.get $5
-  call $~lib/rt/pure/__release
-  local.get $9
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
   call $~lib/rt/pure/__retain
-  local.set $5
-  local.get $4
-  f64.load
-  local.get $5
-  f64.load
-  f64.sub
-  local.get $4
-  f64.load offset=8
-  local.get $5
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $18
-  local.get $5
-  call $~lib/rt/pure/__release
-  local.get $17
-  f64.load offset=8
-  local.get $17
-  f64.load
-  call $~lib/bindings/Math/atan2
-  local.set $13
-  local.get $18
-  f64.load offset=8
-  local.get $18
-  f64.load
-  call $~lib/bindings/Math/atan2
-  local.get $13
-  f64.sub
-  local.set $6
-  local.get $10
-  call $~lib/rt/pure/__retain
-  local.set $5
-  local.get $4
-  f64.load
-  local.get $5
-  f64.load
-  f64.sub
-  local.get $4
-  f64.load offset=8
-  local.get $5
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $19
-  local.get $5
-  call $~lib/rt/pure/__release
-  local.get $10
-  call $~lib/rt/pure/__retain
-  local.set $5
-  local.get $2
-  f64.load
-  local.get $5
-  f64.load
-  f64.sub
-  local.get $2
-  f64.load offset=8
-  local.get $5
-  f64.load offset=8
-  f64.sub
-  call $assembly/Point/Point#constructor
-  local.set $20
-  local.get $5
-  call $~lib/rt/pure/__release
-  local.get $19
-  f64.load offset=8
-  local.get $19
-  f64.load
-  call $~lib/bindings/Math/atan2
-  local.set $26
-  local.get $20
-  f64.load offset=8
-  local.get $20
-  f64.load
-  call $~lib/bindings/Math/atan2
-  local.set $31
+  local.tee $21
   f64.const 0
-  f64.lt
-  local.tee $7
-  if (result i32)
-   local.get $6
-   f64.const 0
-   f64.lt
-  else   
-   i32.const 0
-  end
-  if
-   f64.const 2
-   global.get $~lib/bindings/Math/PI
-   f64.mul
-   local.get $6
-   f64.add
-   local.set $6
-  end
-  global.get $~lib/bindings/Math/PI
+  f64.store
+  local.get $21
+  f64.const 0
+  f64.store offset=8
+  local.get $21
+  local.get $7
+  f64.store
+  local.get $21
+  local.get $5
+  f64.store offset=8
+  local.get $8
+  call $~lib/rt/pure/__release
+  local.get $2
+  local.get $21
+  call $assembly/Line/Line.createPerpendicularAt
+  local.set $26
+  local.get $4
+  call $~lib/rt/pure/__retain
+  local.set $8
+  local.get $0
+  f64.load
+  local.get $8
+  f64.load
+  f64.add
+  local.set $7
+  local.get $0
+  f64.load offset=8
+  local.get $8
+  f64.load offset=8
+  f64.add
+  local.set $5
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $11
+  f64.const 0
+  f64.store
+  local.get $11
+  f64.const 0
+  f64.store offset=8
+  local.get $11
+  local.get $7
+  f64.store
+  local.get $11
+  local.get $5
+  f64.store offset=8
+  local.get $8
+  call $~lib/rt/pure/__release
+  local.get $11
+  f64.load
+  f64.const 2
+  f64.div
+  local.set $7
+  local.get $11
+  f64.load offset=8
+  f64.const 2
+  f64.div
+  local.set $5
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $8
+  f64.const 0
+  f64.store
+  local.get $8
+  f64.const 0
+  f64.store offset=8
+  local.get $8
+  local.get $7
+  f64.store
+  local.get $8
+  local.get $5
+  f64.store offset=8
+  local.get $8
+  local.get $4
+  call $assembly/Line/Line.createPerpendicularAt
+  local.set $27
+  local.get $4
+  call $~lib/rt/pure/__retain
+  local.set $6
+  local.get $2
+  f64.load
+  local.get $6
+  f64.load
+  f64.add
+  local.set $7
+  local.get $2
+  f64.load offset=8
+  local.get $6
+  f64.load offset=8
+  f64.add
+  local.set $5
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $12
+  f64.const 0
+  f64.store
+  local.get $12
+  f64.const 0
+  f64.store offset=8
+  local.get $12
+  local.get $7
+  f64.store
+  local.get $12
+  local.get $5
+  f64.store offset=8
+  local.get $6
+  call $~lib/rt/pure/__release
+  local.get $12
+  f64.load
+  f64.const 2
+  f64.div
+  local.set $7
+  local.get $12
+  f64.load offset=8
+  f64.const 2
+  f64.div
+  local.set $5
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $22
+  f64.const 0
+  f64.store
+  local.get $22
+  f64.const 0
+  f64.store offset=8
+  local.get $22
+  local.get $7
+  f64.store
+  local.get $22
+  local.get $5
+  f64.store offset=8
+  local.get $22
+  local.get $4
+  call $assembly/Line/Line.createPerpendicularAt
+  local.set $28
+  local.get $25
+  local.get $27
+  call $assembly/Line/Line#intersection
+  local.set $13
+  local.get $26
+  local.get $28
+  call $assembly/Line/Line#intersection
   local.set $14
+  local.get $0
+  call $~lib/rt/pure/__retain
+  local.set $6
+  local.get $13
+  f64.load
+  local.get $6
+  f64.load
+  f64.sub
+  local.set $7
+  local.get $13
+  f64.load offset=8
+  local.get $6
+  f64.load offset=8
+  f64.sub
+  local.set $5
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $9
+  f64.const 0
+  f64.store
+  local.get $9
+  f64.const 0
+  f64.store offset=8
+  local.get $9
+  local.get $7
+  f64.store
+  local.get $9
+  local.get $5
+  f64.store offset=8
+  local.get $6
+  call $~lib/rt/pure/__release
+  local.get $9
+  f64.load
+  local.get $9
+  f64.load
+  f64.mul
+  local.get $9
+  f64.load offset=8
+  local.get $9
+  f64.load offset=8
+  f64.mul
+  f64.add
+  call $~lib/bindings/Math/sqrt
+  local.set $23
+  local.get $2
+  call $~lib/rt/pure/__retain
+  local.set $6
+  local.get $14
+  f64.load
+  local.get $6
+  f64.load
+  f64.sub
+  local.set $7
+  local.get $14
+  f64.load offset=8
+  local.get $6
+  f64.load offset=8
+  f64.sub
+  local.set $5
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $10
+  f64.const 0
+  f64.store
+  local.get $10
+  f64.const 0
+  f64.store offset=8
+  local.get $10
+  local.get $7
+  f64.store
+  local.get $10
+  local.get $5
+  f64.store offset=8
+  local.get $6
+  call $~lib/rt/pure/__release
+  local.get $10
+  f64.load
+  local.get $10
+  f64.load
+  f64.mul
+  local.get $10
+  f64.load offset=8
+  local.get $10
+  f64.load offset=8
+  f64.mul
+  f64.add
+  call $~lib/bindings/Math/sqrt
+  local.set $43
+  local.get $13
+  call $~lib/rt/pure/__retain
+  local.set $6
+  local.get $0
+  f64.load
+  local.get $6
+  f64.load
+  f64.sub
+  local.set $7
+  local.get $0
+  f64.load offset=8
+  local.get $6
+  f64.load offset=8
+  f64.sub
+  local.set $5
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $15
+  f64.const 0
+  f64.store
+  local.get $15
+  f64.const 0
+  f64.store offset=8
+  local.get $15
+  local.get $7
+  f64.store
+  local.get $15
+  local.get $5
+  f64.store offset=8
+  local.get $6
+  call $~lib/rt/pure/__release
+  local.get $13
+  call $~lib/rt/pure/__retain
+  local.set $6
+  local.get $4
+  f64.load
+  local.get $6
+  f64.load
+  f64.sub
+  local.set $7
+  local.get $4
+  f64.load offset=8
+  local.get $6
+  f64.load offset=8
+  f64.sub
+  local.set $5
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $16
+  f64.const 0
+  f64.store
+  local.get $16
+  f64.const 0
+  f64.store offset=8
+  local.get $16
+  local.get $7
+  f64.store
+  local.get $16
+  local.get $5
+  f64.store offset=8
+  local.get $6
+  call $~lib/rt/pure/__release
+  local.get $15
+  f64.load offset=8
+  local.get $15
+  f64.load
+  call $~lib/bindings/Math/atan2
+  local.set $29
+  local.get $16
+  f64.load offset=8
+  local.get $16
+  f64.load
+  call $~lib/bindings/Math/atan2
+  local.set $44
+  local.get $14
+  call $~lib/rt/pure/__retain
+  local.set $6
+  local.get $4
+  f64.load
+  local.get $6
+  f64.load
+  f64.sub
+  local.set $7
+  local.get $4
+  f64.load offset=8
+  local.get $6
+  f64.load offset=8
+  f64.sub
+  local.set $5
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $17
+  f64.const 0
+  f64.store
+  local.get $17
+  f64.const 0
+  f64.store offset=8
+  local.get $17
+  local.get $7
+  f64.store
+  local.get $17
+  local.get $5
+  f64.store offset=8
+  local.get $6
+  call $~lib/rt/pure/__release
+  local.get $14
+  call $~lib/rt/pure/__retain
+  local.set $6
+  local.get $2
+  f64.load
+  local.get $6
+  f64.load
+  f64.sub
+  local.set $7
+  local.get $2
+  f64.load offset=8
+  local.get $6
+  f64.load offset=8
+  f64.sub
+  local.set $5
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $18
+  f64.const 0
+  f64.store
+  local.get $18
+  f64.const 0
+  f64.store offset=8
+  local.get $18
+  local.get $7
+  f64.store
+  local.get $18
+  local.get $5
+  f64.store offset=8
+  local.get $6
+  call $~lib/rt/pure/__release
+  local.get $17
+  f64.load offset=8
+  local.get $17
+  f64.load
+  call $~lib/bindings/Math/atan2
+  local.set $30
+  local.get $18
+  f64.load offset=8
+  local.get $18
+  f64.load
+  call $~lib/bindings/Math/atan2
+  local.set $7
+  global.get $~lib/bindings/Math/PI
+  local.set $5
   i32.const 8
   i32.const 4
   call $~lib/rt/tlsf/__alloc
   call $~lib/rt/pure/__retain
-  local.tee $5
+  local.tee $19
   i32.const 0
   i32.store
-  local.get $5
+  local.get $19
   i32.const 0
   i32.store offset=4
-  local.get $9
-  local.get $29
   local.get $13
-  local.get $6
+  local.get $23
+  local.get $29
   f64.const 2
-  local.get $14
+  local.get $5
   f64.mul
-  local.tee $13
+  local.tee $23
+  local.get $44
+  local.get $29
   f64.sub
-  local.get $6
+  local.tee $5
+  f64.add
+  local.get $5
+  local.get $5
+  f64.const 0
+  f64.lt
   i32.const 0
-  local.get $6
+  f64.const 0
+  local.get $31
+  local.get $32
+  f64.sub
+  local.get $33
+  local.get $34
+  f64.add
+  f64.mul
+  f64.add
+  local.get $35
+  local.get $36
+  f64.sub
+  local.get $37
+  local.get $38
+  f64.add
+  f64.mul
+  f64.add
+  local.get $39
+  local.get $40
+  f64.sub
+  local.get $41
+  local.get $42
+  f64.add
+  f64.mul
+  f64.add
+  f64.const 0
+  f64.lt
+  local.tee $24
+  select
+  select
+  local.tee $5
+  local.get $23
+  f64.sub
+  local.get $5
+  i32.const 0
+  local.get $5
   f64.const 0
   f64.gt
-  local.get $7
+  local.get $24
   select
   select
   local.get $0
   local.get $4
-  local.get $7
+  local.get $24
   call $assembly/Arc/Arc#constructor
-  local.set $32
-  local.get $5
+  local.set $6
+  local.get $19
   i32.load
   call $~lib/rt/pure/__release
-  local.get $5
-  local.get $32
+  local.get $19
+  local.get $6
   i32.store
-  local.get $10
+  local.get $14
+  local.get $43
   local.get $30
-  local.get $26
-  local.get $13
-  local.get $31
-  local.get $26
+  local.get $23
+  local.get $7
+  local.get $30
   f64.sub
-  local.tee $6
+  local.tee $5
   f64.add
-  local.get $6
-  local.get $6
+  local.get $5
+  local.get $5
   f64.const 0
   f64.lt
   i32.const 0
-  local.get $7
+  local.get $24
   select
   select
-  local.tee $6
-  local.get $13
+  local.tee $5
+  local.get $23
   f64.sub
-  local.get $6
+  local.get $5
   i32.const 0
-  local.get $6
+  local.get $5
   f64.const 0
   f64.gt
-  local.get $7
+  local.get $24
   select
   select
   local.get $4
   local.get $2
-  local.get $7
+  local.get $24
   call $assembly/Arc/Arc#constructor
-  local.set $7
-  local.get $5
+  local.set $6
+  local.get $19
   i32.load offset=4
   call $~lib/rt/pure/__release
-  local.get $5
-  local.get $7
+  local.get $19
+  local.get $6
   i32.store offset=4
+  local.get $20
+  call $~lib/rt/pure/__release
+  local.get $25
+  call $~lib/rt/pure/__release
   local.get $21
   call $~lib/rt/pure/__release
-  local.get $22
+  local.get $26
+  call $~lib/rt/pure/__release
+  local.get $11
   call $~lib/rt/pure/__release
   local.get $8
   call $~lib/rt/pure/__release
-  local.get $23
-  call $~lib/rt/pure/__release
-  local.get $15
-  call $~lib/rt/pure/__release
   local.get $27
   call $~lib/rt/pure/__release
-  local.get $24
+  local.get $12
   call $~lib/rt/pure/__release
-  local.get $16
+  local.get $22
   call $~lib/rt/pure/__release
   local.get $28
   call $~lib/rt/pure/__release
-  local.get $25
+  local.get $13
+  call $~lib/rt/pure/__release
+  local.get $14
   call $~lib/rt/pure/__release
   local.get $9
   call $~lib/rt/pure/__release
   local.get $10
   call $~lib/rt/pure/__release
-  local.get $11
+  local.get $15
   call $~lib/rt/pure/__release
-  local.get $12
+  local.get $16
   call $~lib/rt/pure/__release
   local.get $17
   call $~lib/rt/pure/__release
   local.get $18
-  call $~lib/rt/pure/__release
-  local.get $19
-  call $~lib/rt/pure/__release
-  local.get $20
   call $~lib/rt/pure/__release
   local.get $0
   call $~lib/rt/pure/__release
@@ -5148,9 +6094,10 @@
   call $~lib/rt/pure/__release
   local.get $4
   call $~lib/rt/pure/__release
-  local.get $5
+  local.get $19
  )
- (func $assembly/Arc/Arc#pointAt (; 58 ;) (type $FUNCSIG$iid) (param $0 i32) (param $1 f64) (result i32)
+ (func $assembly/Arc/Arc#pointAt (; 56 ;) (type $FUNCSIG$iid) (param $0 i32) (param $1 f64) (result i32)
+  (local $2 f64)
   local.get $0
   i32.load
   f64.load
@@ -5166,6 +6113,7 @@
   call $~lib/bindings/Math/cos
   f64.mul
   f64.add
+  local.set $2
   local.get $0
   i32.load
   f64.load offset=8
@@ -5181,9 +6129,26 @@
   call $~lib/bindings/Math/sin
   f64.mul
   f64.add
-  call $assembly/Point/Point#constructor
+  local.set $1
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $0
+  f64.const 0
+  f64.store
+  local.get $0
+  f64.const 0
+  f64.store offset=8
+  local.get $0
+  local.get $2
+  f64.store
+  local.get $0
+  local.get $1
+  f64.store offset=8
+  local.get $0
  )
- (func $assembly/BiArc/BiArc#pointAt (; 59 ;) (type $FUNCSIG$iid) (param $0 i32) (param $1 f64) (result i32)
+ (func $assembly/BiArc/BiArc#pointAt (; 57 ;) (type $FUNCSIG$iid) (param $0 i32) (param $1 f64) (result i32)
   (local $2 i32)
   (local $3 f64)
   local.get $1
@@ -5235,66 +6200,123 @@
    call $assembly/Arc/Arc#pointAt
   end
  )
- (func $assembly/CubicBezier/CubicBezier#pointAt (; 60 ;) (type $FUNCSIG$iid) (param $0 i32) (param $1 f64) (result i32)
+ (func $assembly/CubicBezier/CubicBezier#pointAt (; 58 ;) (type $FUNCSIG$iid) (param $0 i32) (param $1 f64) (result i32)
   (local $2 i32)
   (local $3 f64)
-  (local $4 i32)
+  (local $4 f64)
   (local $5 i32)
-  (local $6 i32)
-  (local $7 f64)
+  (local $6 f64)
+  (local $7 i32)
+  (local $8 i32)
+  (local $9 i32)
   local.get $0
   i32.load
-  local.tee $4
+  local.tee $2
   f64.load
   f64.const 1
   local.get $1
   f64.sub
+  local.tee $6
+  local.get $6
+  f64.mul
+  local.get $6
+  f64.mul
   local.tee $3
-  local.get $3
   f64.mul
-  local.get $3
-  f64.mul
-  local.tee $7
-  f64.mul
-  local.get $4
-  f64.load offset=8
-  local.get $7
-  f64.mul
-  call $assembly/Point/Point#constructor
   local.set $4
+  local.get $2
+  f64.load offset=8
+  local.get $3
+  f64.mul
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
+  local.get $2
+  local.tee $9
+  local.set $7
   local.get $0
   i32.load offset=4
   local.tee $2
   f64.load
   f64.const 3
-  local.get $3
+  local.get $6
   f64.mul
-  local.get $3
+  local.get $6
   f64.mul
   local.get $1
   f64.mul
   local.tee $3
   f64.mul
+  local.set $4
   local.get $2
   f64.load offset=8
   local.get $3
   f64.mul
-  call $assembly/Point/Point#constructor
-  local.set $2
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
   local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
+  local.get $7
   f64.load
   local.get $2
+  local.tee $8
   f64.load
   f64.add
-  local.get $4
+  local.set $4
+  local.get $7
   f64.load offset=8
   local.get $2
   f64.load offset=8
   f64.add
-  call $assembly/Point/Point#constructor
-  local.set $5
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
   local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
+  local.get $8
   call $~lib/rt/pure/__release
+  local.get $2
+  local.tee $7
+  local.set $5
   local.get $0
   i32.load offset=8
   local.tee $2
@@ -5310,26 +6332,61 @@
   f64.mul
   local.tee $3
   f64.mul
+  local.set $4
   local.get $2
   f64.load offset=8
   local.get $3
   f64.mul
-  call $assembly/Point/Point#constructor
-  local.set $2
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
   local.get $5
   f64.load
   local.get $2
+  local.tee $8
   f64.load
   f64.add
+  local.set $4
   local.get $5
   f64.load offset=8
   local.get $2
   f64.load offset=8
   f64.add
-  call $assembly/Point/Point#constructor
-  local.set $6
+  local.set $3
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
   local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $4
+  f64.store
+  local.get $2
+  local.get $3
+  f64.store offset=8
+  local.get $8
   call $~lib/rt/pure/__release
+  local.get $2
+  local.set $5
   local.get $0
   i32.load offset=12
   local.tee $0
@@ -5341,51 +6398,86 @@
   f64.mul
   local.tee $1
   f64.mul
+  local.set $3
   local.get $0
   f64.load offset=8
   local.get $1
   f64.mul
-  call $assembly/Point/Point#constructor
-  local.set $0
-  local.get $6
+  local.set $1
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $3
+  f64.store
+  local.get $2
+  local.get $1
+  f64.store offset=8
+  local.get $5
   f64.load
-  local.get $0
+  local.get $2
+  local.tee $0
   f64.load
   f64.add
-  local.get $6
+  local.set $3
+  local.get $5
   f64.load offset=8
-  local.get $0
+  local.get $2
   f64.load offset=8
   f64.add
-  call $assembly/Point/Point#constructor
+  local.set $1
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/rt/pure/__retain
+  local.tee $2
+  f64.const 0
+  f64.store
+  local.get $2
+  f64.const 0
+  f64.store offset=8
+  local.get $2
+  local.get $3
+  f64.store
+  local.get $2
+  local.get $1
+  f64.store offset=8
   local.get $0
   call $~lib/rt/pure/__release
-  local.get $4
+  local.get $9
+  call $~lib/rt/pure/__release
+  local.get $7
   call $~lib/rt/pure/__release
   local.get $5
   call $~lib/rt/pure/__release
-  local.get $6
-  call $~lib/rt/pure/__release
+  local.get $2
  )
- (func $assembly/cubicBezierToBiarc/cubicBezierToBiarc (; 61 ;) (type $FUNCSIG$iiid) (param $0 i32) (param $1 i32) (param $2 f64) (result i32)
+ (func $assembly/cubicBezierToBiarc/cubicBezierToBiarc (; 59 ;) (type $FUNCSIG$iiid) (param $0 i32) (param $1 i32) (param $2 f64) (result i32)
   (local $3 i32)
-  (local $4 i32)
+  (local $4 f64)
   (local $5 i32)
   (local $6 i32)
-  (local $7 i32)
-  (local $8 f64)
-  (local $9 f64)
-  (local $10 f64)
+  (local $7 f64)
+  (local $8 i32)
+  (local $9 i32)
+  (local $10 i32)
   (local $11 i32)
   (local $12 i32)
   (local $13 i32)
   (local $14 i32)
   (local $15 i32)
   (local $16 i32)
-  (local $17 i32)
-  (local $18 i32)
+  (local $17 f64)
+  (local $18 f64)
   (local $19 i32)
-  (local $20 i32)
+  (local $20 f64)
   (local $21 i32)
   (local $22 i32)
   (local $23 i32)
@@ -5394,10 +6486,11 @@
   (local $26 i32)
   (local $27 i32)
   (local $28 i32)
-  (local $29 f64)
+  (local $29 i32)
   (local $30 i32)
   (local $31 i32)
-  (local $32 f64)
+  (local $32 i32)
+  (local $33 f64)
   local.get $0
   call $~lib/rt/pure/__retain
   drop
@@ -5408,14 +6501,12 @@
   i32.const 0
   i32.const 2
   call $~lib/arraybuffer/ArrayBufferView#constructor
-  local.tee $7
+  local.tee $26
   i32.const 0
   i32.store offset=12
-  local.get $7
+  local.get $26
   i32.const 0
   i32.store offset=12
-  local.get $7
-  local.set $21
   i32.const 16
   i32.const 10
   call $~lib/rt/tlsf/__alloc
@@ -5423,12 +6514,14 @@
   i32.const 0
   i32.const 2
   call $~lib/arraybuffer/ArrayBufferView#constructor
-  local.tee $7
+  local.tee $3
   i32.const 0
   i32.store offset=12
-  local.get $7
+  local.get $3
   i32.const 0
   i32.store offset=12
+  local.get $3
+  local.set $9
   local.get $0
   i32.const 0
   call $~lib/typedarray/Float64Array#__get
@@ -5454,28 +6547,28 @@
   i32.const 7
   call $~lib/typedarray/Float64Array#__get
   call $assembly/CubicBezier/CubicBezier#constructor
-  local.tee $11
+  local.tee $14
   call $assembly/CubicBezier/CubicBezier#inflexionPoints
-  local.tee $22
+  local.tee $28
   i32.const 0
   call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
-  local.tee $25
+  local.tee $29
   call $~lib/rt/pure/__retain
-  local.set $16
-  local.get $22
+  local.set $22
+  local.get $28
   i32.const 1
   call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
-  local.tee $26
+  local.tee $30
   call $~lib/rt/pure/__retain
-  local.set $17
-  local.get $16
+  local.set $23
+  local.get $22
   call $~lib/rt/pure/__retain
-  local.tee $4
+  local.tee $6
   f64.load offset=8
   f64.const 0
   f64.eq
   if (result i32)
-   local.get $4
+   local.get $6
    f64.load
    f64.const 0
    f64.gt
@@ -5483,7 +6576,32 @@
    i32.const 0
   end
   if (result i32)
-   local.get $4
+   local.get $6
+   f64.load
+   f64.const 1
+   f64.lt
+  else   
+   i32.const 0
+  end
+  local.set $5
+  local.get $6
+  call $~lib/rt/pure/__release
+  local.get $23
+  call $~lib/rt/pure/__retain
+  local.tee $6
+  f64.load offset=8
+  f64.const 0
+  f64.eq
+  if (result i32)
+   local.get $6
+   f64.load
+   f64.const 0
+   f64.gt
+  else   
+   i32.const 0
+  end
+  if (result i32)
+   local.get $6
    f64.load
    f64.const 1
    f64.lt
@@ -5491,415 +6609,518 @@
    i32.const 0
   end
   local.set $3
-  local.get $4
+  local.get $6
   call $~lib/rt/pure/__release
-  local.get $17
-  call $~lib/rt/pure/__retain
-  local.tee $5
-  f64.load offset=8
-  f64.const 0
-  f64.eq
-  if (result i32)
-   local.get $5
-   f64.load
-   f64.const 0
-   f64.gt
-  else   
-   i32.const 0
-  end
-  if (result i32)
-   local.get $5
-   f64.load
-   f64.const 1
-   f64.lt
-  else   
-   i32.const 0
-  end
-  local.set $4
-  local.get $5
-  call $~lib/rt/pure/__release
-  local.get $4
+  local.get $3
   i32.eqz
   i32.const 0
-  local.get $3
+  local.get $5
   select
   if
-   local.get $7
-   local.get $11
-   local.get $16
+   local.get $9
+   local.get $14
+   local.get $22
    f64.load
    call $assembly/CubicBezier/CubicBezier#split
-   local.tee $3
+   local.tee $6
    i32.const 0
-   call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
-   local.tee $4
-   call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
-   local.get $7
-   local.get $3
-   i32.const 1
    call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
    local.tee $5
    call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
-   local.get $3
-   call $~lib/rt/pure/__release
-   local.get $4
+   local.get $9
+   local.get $6
+   i32.const 1
+   call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
+   local.tee $3
+   call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
+   local.get $6
    call $~lib/rt/pure/__release
    local.get $5
    call $~lib/rt/pure/__release
+   local.get $3
+   call $~lib/rt/pure/__release
   else   
    i32.const 0
-   local.get $4
    local.get $3
+   local.get $5
    select
    if
-    local.get $7
-    local.get $11
-    local.get $17
+    local.get $9
+    local.get $14
+    local.get $23
     f64.load
     call $assembly/CubicBezier/CubicBezier#split
-    local.tee $3
+    local.tee $6
     i32.const 0
-    call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
-    local.tee $4
-    call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
-    local.get $7
-    local.get $3
-    i32.const 1
     call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
     local.tee $5
     call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
-    local.get $3
-    call $~lib/rt/pure/__release
-    local.get $4
+    local.get $9
+    local.get $6
+    i32.const 1
+    call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
+    local.tee $3
+    call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
+    local.get $6
     call $~lib/rt/pure/__release
     local.get $5
     call $~lib/rt/pure/__release
-   else    
-    local.get $4
-    i32.const 0
     local.get $3
+    call $~lib/rt/pure/__release
+   else    
+    local.get $3
+    i32.const 0
+    local.get $5
     select
     if
      f64.const 1
-     local.get $16
+     local.get $22
      f64.load
-     local.tee $8
+     local.tee $7
      f64.sub
-     local.get $17
+     local.get $23
      f64.load
      f64.mul
-     local.set $9
-     local.get $11
+     local.set $4
+     local.get $14
      local.tee $3
-     local.get $8
+     local.get $7
      call $assembly/CubicBezier/CubicBezier#split
-     local.tee $4
+     local.tee $13
      i32.const 1
      call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
-     local.tee $5
-     local.tee $11
+     local.tee $15
+     local.tee $14
      local.get $3
      i32.ne
      if
-      local.get $11
+      local.get $14
       call $~lib/rt/pure/__retain
       drop
       local.get $3
       call $~lib/rt/pure/__release
      end
-     local.get $11
-     local.get $9
-     call $assembly/CubicBezier/CubicBezier#split
-     local.set $3
-     local.get $7
+     local.get $14
      local.get $4
-     i32.const 0
-     call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
-     local.tee $14
-     call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
-     local.get $7
-     local.get $3
+     call $assembly/CubicBezier/CubicBezier#split
+     local.set $11
+     local.get $9
+     local.get $13
      i32.const 0
      call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
      local.tee $6
      call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
-     local.get $7
-     local.get $3
+     local.get $9
+     local.get $11
+     i32.const 0
+     call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
+     local.tee $5
+     call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
+     local.get $9
+     local.get $11
      i32.const 1
      call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
-     local.tee $12
+     local.tee $3
      call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
-     local.get $4
+     local.get $13
+     call $~lib/rt/pure/__release
+     local.get $15
+     call $~lib/rt/pure/__release
+     local.get $11
+     call $~lib/rt/pure/__release
+     local.get $6
      call $~lib/rt/pure/__release
      local.get $5
      call $~lib/rt/pure/__release
      local.get $3
      call $~lib/rt/pure/__release
-     local.get $14
-     call $~lib/rt/pure/__release
-     local.get $6
-     call $~lib/rt/pure/__release
-     local.get $12
-     call $~lib/rt/pure/__release
     else     
-     local.get $7
-     local.get $11
+     local.get $9
+     local.get $14
      call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
     end
    end
   end
   loop $continue|0
-   local.get $7
+   local.get $9
    i32.load offset=12
    i32.const 0
    i32.gt_s
    if
-    local.get $7
+    local.get $9
     call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#pop
-    local.tee $5
+    local.tee $8
     i32.load
-    local.get $5
+    local.get $8
     i32.load offset=4
     f64.const 0
     call $assembly/Line/Line#constructor
-    local.tee $27
-    local.get $5
+    local.tee $31
+    local.get $8
     i32.load offset=12
-    local.get $5
+    local.get $8
     i32.load offset=8
     f64.const 0
     call $assembly/Line/Line#constructor
-    local.tee $28
+    local.tee $32
     call $assembly/Line/Line#intersection
-    local.set $14
-    local.get $5
-    i32.load offset=12
-    local.set $3
-    local.get $14
-    call $~lib/rt/pure/__retain
-    local.tee $4
-    f64.load
-    local.get $3
-    f64.load
-    f64.sub
-    local.tee $8
-    local.get $8
-    f64.mul
-    local.get $4
-    f64.load offset=8
-    local.get $3
-    f64.load offset=8
-    f64.sub
-    local.tee $8
-    local.get $8
-    f64.mul
-    f64.add
-    call $~lib/bindings/Math/sqrt
-    local.set $8
-    local.get $4
-    call $~lib/rt/pure/__release
-    local.get $5
-    i32.load
-    local.set $3
-    local.get $14
-    call $~lib/rt/pure/__retain
-    local.tee $4
-    f64.load
-    local.get $3
-    f64.load
-    f64.sub
-    local.tee $9
-    local.get $9
-    f64.mul
-    local.get $4
-    f64.load offset=8
-    local.get $3
-    f64.load offset=8
-    f64.sub
-    local.tee $9
-    local.get $9
-    f64.mul
-    f64.add
-    call $~lib/bindings/Math/sqrt
-    local.set $9
-    local.get $4
-    call $~lib/rt/pure/__release
-    local.get $5
-    i32.load
-    local.set $3
-    local.get $5
-    i32.load offset=12
-    call $~lib/rt/pure/__retain
-    local.tee $4
-    f64.load
-    local.get $3
-    f64.load
-    f64.sub
-    local.tee $10
-    local.get $10
-    f64.mul
-    local.get $4
-    f64.load offset=8
-    local.get $3
-    f64.load offset=8
-    f64.sub
-    local.tee $10
-    local.get $10
-    f64.mul
-    f64.add
-    call $~lib/bindings/Math/sqrt
-    local.set $10
-    local.get $4
-    call $~lib/rt/pure/__release
-    local.get $5
-    i32.load
-    local.tee $3
-    f64.load
-    local.get $8
-    f64.mul
-    local.get $3
-    f64.load offset=8
-    local.get $8
-    f64.mul
-    call $assembly/Point/Point#constructor
-    local.set $18
-    local.get $5
-    i32.load offset=12
-    local.tee $3
-    f64.load
-    local.get $9
-    f64.mul
-    local.get $3
-    f64.load offset=8
-    local.get $9
-    f64.mul
-    call $assembly/Point/Point#constructor
-    local.set $4
-    local.get $18
-    f64.load
-    local.get $4
-    f64.load
-    f64.add
-    local.get $18
-    f64.load offset=8
-    local.get $4
-    f64.load offset=8
-    f64.add
-    call $assembly/Point/Point#constructor
-    local.get $4
-    call $~lib/rt/pure/__release
-    local.set $4
-    local.get $14
-    f64.load
-    local.get $10
-    f64.mul
-    local.get $14
-    f64.load offset=8
-    local.get $10
-    f64.mul
-    call $assembly/Point/Point#constructor
-    local.set $3
-    local.get $4
-    f64.load
-    local.get $3
-    f64.load
-    f64.add
-    local.get $4
-    f64.load offset=8
-    local.get $3
-    f64.load offset=8
-    f64.add
-    call $assembly/Point/Point#constructor
     local.set $19
+    local.get $8
+    i32.load offset=12
+    local.set $5
+    local.get $19
+    call $~lib/rt/pure/__retain
+    local.tee $3
+    f64.load
+    local.get $5
+    f64.load
+    f64.sub
+    local.tee $4
+    local.get $4
+    f64.mul
+    local.get $3
+    f64.load offset=8
+    local.get $5
+    f64.load offset=8
+    f64.sub
+    local.tee $4
+    local.get $4
+    f64.mul
+    f64.add
+    call $~lib/bindings/Math/sqrt
+    local.set $20
+    local.get $3
+    call $~lib/rt/pure/__release
+    local.get $8
+    i32.load
+    local.set $5
+    local.get $19
+    call $~lib/rt/pure/__retain
+    local.tee $3
+    f64.load
+    local.get $5
+    f64.load
+    f64.sub
+    local.tee $4
+    local.get $4
+    f64.mul
+    local.get $3
+    f64.load offset=8
+    local.get $5
+    f64.load offset=8
+    f64.sub
+    local.tee $4
+    local.get $4
+    f64.mul
+    f64.add
+    call $~lib/bindings/Math/sqrt
+    local.set $17
+    local.get $3
+    call $~lib/rt/pure/__release
+    local.get $8
+    i32.load
+    local.set $5
+    local.get $8
+    i32.load offset=12
+    call $~lib/rt/pure/__retain
+    local.tee $3
+    f64.load
+    local.get $5
+    f64.load
+    f64.sub
+    local.tee $4
+    local.get $4
+    f64.mul
+    local.get $3
+    f64.load offset=8
+    local.get $5
+    f64.load offset=8
+    f64.sub
+    local.tee $4
+    local.get $4
+    f64.mul
+    f64.add
+    call $~lib/bindings/Math/sqrt
+    local.set $18
+    local.get $3
+    call $~lib/rt/pure/__release
+    local.get $8
+    i32.load
+    local.tee $3
+    f64.load
+    local.get $20
+    f64.mul
+    local.set $7
+    local.get $3
+    f64.load offset=8
+    local.get $20
+    f64.mul
+    local.set $4
+    i32.const 16
+    i32.const 6
+    call $~lib/rt/tlsf/__alloc
+    call $~lib/rt/pure/__retain
+    local.tee $11
+    f64.const 0
+    f64.store
+    local.get $11
+    f64.const 0
+    f64.store offset=8
+    local.get $11
+    local.get $7
+    f64.store
+    local.get $11
+    local.get $4
+    f64.store offset=8
+    local.get $8
+    i32.load offset=12
+    local.tee $3
+    f64.load
+    local.get $17
+    f64.mul
+    local.set $7
+    local.get $3
+    f64.load offset=8
+    local.get $17
+    f64.mul
+    local.set $4
+    i32.const 16
+    i32.const 6
+    call $~lib/rt/tlsf/__alloc
+    call $~lib/rt/pure/__retain
+    local.tee $3
+    f64.const 0
+    f64.store
+    local.get $3
+    f64.const 0
+    f64.store offset=8
+    local.get $3
+    local.get $7
+    f64.store
+    local.get $3
+    local.get $4
+    f64.store offset=8
+    local.get $11
+    f64.load
+    local.get $3
+    f64.load
+    f64.add
+    local.set $7
+    local.get $11
+    f64.load offset=8
+    local.get $3
+    f64.load offset=8
+    f64.add
+    local.set $4
+    i32.const 16
+    i32.const 6
+    call $~lib/rt/tlsf/__alloc
+    call $~lib/rt/pure/__retain
+    local.tee $13
+    f64.const 0
+    f64.store
+    local.get $13
+    f64.const 0
+    f64.store offset=8
+    local.get $13
+    local.get $7
+    f64.store
+    local.get $13
+    local.get $4
+    f64.store offset=8
     local.get $3
     call $~lib/rt/pure/__release
     local.get $19
     f64.load
-    local.get $8
-    local.get $9
-    f64.add
-    local.get $10
-    f64.add
-    local.tee $8
-    f64.div
+    local.get $18
+    f64.mul
+    local.set $7
     local.get $19
     f64.load offset=8
-    local.get $8
+    local.get $18
+    f64.mul
+    local.set $4
+    i32.const 16
+    i32.const 6
+    call $~lib/rt/tlsf/__alloc
+    call $~lib/rt/pure/__retain
+    local.tee $3
+    f64.const 0
+    f64.store
+    local.get $3
+    f64.const 0
+    f64.store offset=8
+    local.get $3
+    local.get $7
+    f64.store
+    local.get $3
+    local.get $4
+    f64.store offset=8
+    local.get $13
+    f64.load
+    local.get $3
+    f64.load
+    f64.add
+    local.set $7
+    local.get $13
+    f64.load offset=8
+    local.get $3
+    f64.load offset=8
+    f64.add
+    local.set $4
+    i32.const 16
+    i32.const 6
+    call $~lib/rt/tlsf/__alloc
+    call $~lib/rt/pure/__retain
+    local.tee $15
+    f64.const 0
+    f64.store
+    local.get $15
+    f64.const 0
+    f64.store offset=8
+    local.get $15
+    local.get $7
+    f64.store
+    local.get $15
+    local.get $4
+    f64.store offset=8
+    local.get $3
+    call $~lib/rt/pure/__release
+    local.get $15
+    f64.load
+    local.get $20
+    local.get $17
+    f64.add
+    local.get $18
+    f64.add
+    local.tee $4
     f64.div
-    call $assembly/Point/Point#constructor
-    local.set $23
-    local.get $5
+    local.set $7
+    local.get $15
+    f64.load offset=8
+    local.get $4
+    f64.div
+    local.set $4
+    i32.const 16
+    i32.const 6
+    call $~lib/rt/tlsf/__alloc
+    call $~lib/rt/pure/__retain
+    local.tee $6
+    f64.const 0
+    f64.store
+    local.get $6
+    f64.const 0
+    f64.store offset=8
+    local.get $6
+    local.get $7
+    f64.store
+    local.get $6
+    local.get $4
+    f64.store offset=8
+    local.get $8
     i32.load
-    local.set $12
-    local.get $5
+    local.set $21
+    local.get $8
     i32.load
-    local.set $6
-    local.get $5
+    local.set $3
+    local.get $8
     i32.load offset=4
     call $~lib/rt/pure/__retain
-    local.set $3
-    local.get $6
-    f64.load
+    local.set $10
     local.get $3
     f64.load
+    local.get $10
+    f64.load
     f64.sub
-    local.get $6
-    f64.load offset=8
+    local.set $7
     local.get $3
     f64.load offset=8
+    local.get $10
+    f64.load offset=8
     f64.sub
-    call $assembly/Point/Point#constructor
-    local.set $24
-    local.get $3
+    local.set $4
+    i32.const 16
+    i32.const 6
+    call $~lib/rt/tlsf/__alloc
+    call $~lib/rt/pure/__retain
+    local.tee $5
+    f64.const 0
+    f64.store
+    local.get $5
+    f64.const 0
+    f64.store offset=8
+    local.get $5
+    local.get $7
+    f64.store
+    local.get $5
+    local.get $4
+    f64.store offset=8
+    local.get $10
     call $~lib/rt/pure/__release
-    local.get $5
+    local.get $8
     i32.load offset=12
-    local.set $13
-    local.get $5
+    local.set $10
+    local.get $8
     i32.load offset=12
     local.set $3
-    local.get $5
+    local.get $8
     i32.load offset=8
     call $~lib/rt/pure/__retain
-    local.set $6
+    local.set $12
     local.get $3
     f64.load
-    local.get $6
+    local.get $12
     f64.load
     f64.sub
+    local.set $7
     local.get $3
     f64.load offset=8
-    local.get $6
+    local.get $12
     f64.load offset=8
     f64.sub
-    call $assembly/Point/Point#constructor
-    local.set $3
-    local.get $6
+    local.set $4
+    i32.const 16
+    i32.const 6
+    call $~lib/rt/tlsf/__alloc
+    call $~lib/rt/pure/__retain
+    local.tee $3
+    f64.const 0
+    f64.store
+    local.get $3
+    f64.const 0
+    f64.store offset=8
+    local.get $3
+    local.get $7
+    f64.store
+    local.get $3
+    local.get $4
+    f64.store offset=8
+    local.get $12
     call $~lib/rt/pure/__release
     f64.const 0
-    local.set $8
+    local.set $17
     f64.const 0
-    local.set $9
+    local.set $18
     f64.const 1
-    local.get $12
-    local.get $24
-    local.get $13
+    local.get $21
+    local.get $5
+    local.get $10
     local.get $3
-    local.get $23
-    call $assembly/BiArc/BiArc#constructor
-    local.tee $12
-    i32.load
-    local.tee $6
-    f64.load offset=8
     local.get $6
+    call $assembly/BiArc/BiArc#constructor
+    local.tee $24
+    i32.load
+    local.tee $10
+    f64.load offset=8
+    local.get $10
     f64.load offset=24
     call $~lib/bindings/Math/abs
     f64.mul
-    local.get $12
+    local.get $24
     i32.load offset=4
-    local.tee $6
+    local.tee $10
     f64.load offset=8
-    local.get $6
+    local.get $10
     f64.load offset=24
     call $~lib/bindings/Math/abs
     f64.mul
@@ -5907,155 +7128,171 @@
     local.get $1
     f64.convert_i32_s
     f64.div
-    local.tee $10
+    local.tee $4
     f64.div
-    local.set $29
-    local.get $10
+    local.set $33
+    local.get $4
     i32.trunc_f64_s
-    local.set $30
+    local.set $21
     i32.const 0
-    local.set $13
+    local.set $25
     loop $loop|1
-     local.get $13
-     local.get $30
+     local.get $25
+     local.get $21
      i32.le_s
      if
-      local.get $12
-      local.get $29
-      local.get $13
+      local.get $24
+      local.get $33
+      local.get $25
       f64.convert_i32_s
       f64.mul
-      local.tee $10
+      local.tee $7
       call $assembly/BiArc/BiArc#pointAt
-      local.set $15
-      local.get $5
-      local.get $10
+      local.set $27
+      local.get $8
+      local.get $7
       call $assembly/CubicBezier/CubicBezier#pointAt
-      local.tee $31
+      local.tee $10
       call $~lib/rt/pure/__retain
+      local.set $12
+      local.get $27
+      f64.load
+      local.get $12
+      f64.load
+      f64.sub
       local.set $20
-      local.get $15
-      f64.load
-      local.get $20
-      f64.load
-      f64.sub
-      local.get $15
+      local.get $27
       f64.load offset=8
-      local.get $20
+      local.get $12
       f64.load offset=8
       f64.sub
-      call $assembly/Point/Point#constructor
-      local.set $6
+      local.set $4
+      i32.const 16
+      i32.const 6
+      call $~lib/rt/tlsf/__alloc
+      call $~lib/rt/pure/__retain
+      local.tee $16
+      f64.const 0
+      f64.store
+      local.get $16
+      f64.const 0
+      f64.store offset=8
+      local.get $16
       local.get $20
+      f64.store
+      local.get $16
+      local.get $4
+      f64.store offset=8
+      local.get $12
       call $~lib/rt/pure/__release
-      local.get $6
+      local.get $16
       f64.load
-      local.get $6
+      local.get $16
       f64.load
       f64.mul
-      local.get $6
+      local.get $16
       f64.load offset=8
-      local.get $6
+      local.get $16
       f64.load offset=8
       f64.mul
       f64.add
       call $~lib/bindings/Math/sqrt
-      local.tee $32
-      local.get $8
+      local.tee $4
+      local.get $17
       f64.gt
       if
-       local.get $10
-       local.set $9
-       local.get $32
-       local.set $8
+       local.get $4
+       local.set $17
+       local.get $7
+       local.set $18
       end
-      local.get $13
+      local.get $25
       i32.const 1
       i32.add
-      local.set $13
-      local.get $15
+      local.set $25
+      local.get $27
       call $~lib/rt/pure/__release
-      local.get $31
+      local.get $10
       call $~lib/rt/pure/__release
-      local.get $6
+      local.get $16
       call $~lib/rt/pure/__release
       br $loop|1
      end
     end
-    local.get $8
+    local.get $17
     local.get $2
     f64.gt
     if
-     local.get $7
-     local.get $5
      local.get $9
+     local.get $8
+     local.get $18
      call $assembly/CubicBezier/CubicBezier#split
-     local.tee $6
+     local.tee $12
      i32.const 0
      call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
-     local.tee $13
+     local.tee $21
      call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
-     local.get $7
-     local.get $6
+     local.get $9
+     local.get $12
      i32.const 1
      call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
-     local.tee $15
+     local.tee $10
      call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
-     local.get $6
+     local.get $12
      call $~lib/rt/pure/__release
-     local.get $13
+     local.get $21
      call $~lib/rt/pure/__release
-     local.get $15
+     local.get $10
      call $~lib/rt/pure/__release
     else     
-     local.get $21
-     local.get $12
+     local.get $26
+     local.get $24
      call $~lib/array/Array<assembly/CubicBezier/CubicBezier>#push
     end
-    local.get $5
+    local.get $8
     call $~lib/rt/pure/__release
-    local.get $27
+    local.get $31
     call $~lib/rt/pure/__release
-    local.get $28
-    call $~lib/rt/pure/__release
-    local.get $14
-    call $~lib/rt/pure/__release
-    local.get $18
-    call $~lib/rt/pure/__release
-    local.get $4
+    local.get $32
     call $~lib/rt/pure/__release
     local.get $19
     call $~lib/rt/pure/__release
-    local.get $23
+    local.get $11
     call $~lib/rt/pure/__release
-    local.get $24
+    local.get $13
+    call $~lib/rt/pure/__release
+    local.get $15
+    call $~lib/rt/pure/__release
+    local.get $6
+    call $~lib/rt/pure/__release
+    local.get $5
     call $~lib/rt/pure/__release
     local.get $3
     call $~lib/rt/pure/__release
-    local.get $12
+    local.get $24
     call $~lib/rt/pure/__release
     br $continue|0
    end
   end
-  local.get $7
+  local.get $9
   call $~lib/rt/pure/__release
-  local.get $11
+  local.get $14
+  call $~lib/rt/pure/__release
+  local.get $28
+  call $~lib/rt/pure/__release
+  local.get $29
   call $~lib/rt/pure/__release
   local.get $22
   call $~lib/rt/pure/__release
-  local.get $25
+  local.get $30
   call $~lib/rt/pure/__release
-  local.get $16
-  call $~lib/rt/pure/__release
-  local.get $26
-  call $~lib/rt/pure/__release
-  local.get $17
+  local.get $23
   call $~lib/rt/pure/__release
   local.get $0
   call $~lib/rt/pure/__release
-  local.get $21
+  local.get $26
  )
- (func $~lib/array/Array<assembly/BiArc/BiArc>#concat (; 62 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/array/Array<assembly/BiArc/BiArc>#concat (; 60 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -6165,7 +7402,7 @@
   call $~lib/rt/pure/__release
   local.get $5
  )
- (func $~lib/array/Array<assembly/BiArc/BiArc>#__get (; 63 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/array/Array<assembly/BiArc/BiArc>#__get (; 61 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $1
   local.get $0
   i32.load offset=12
@@ -6196,7 +7433,7 @@
   local.get $1
   call $~lib/array/Array<assembly/Complex/Complex>#__unchecked_get
  )
- (func $~lib/typedarray/Float64Array#__set (; 64 ;) (type $FUNCSIG$viid) (param $0 i32) (param $1 i32) (param $2 f64)
+ (func $~lib/typedarray/Float64Array#__set (; 62 ;) (type $FUNCSIG$viid) (param $0 i32) (param $1 i32) (param $2 f64)
   local.get $1
   local.get $0
   i32.load offset=8
@@ -6220,7 +7457,7 @@
   local.get $2
   f64.store
  )
- (func $assembly/index/compute (; 65 ;) (type $FUNCSIG$iiid) (param $0 i32) (param $1 i32) (param $2 f64) (result i32)
+ (func $assembly/index/compute (; 63 ;) (type $FUNCSIG$iiid) (param $0 i32) (param $1 i32) (param $2 f64) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -6460,7 +7697,7 @@
   call $~lib/rt/pure/__release
   local.get $1
  )
- (func $~lib/rt/pure/__visit (; 66 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/rt/pure/__visit (; 64 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   local.get $0
   i32.const 756
   i32.lt_u
@@ -6570,7 +7807,7 @@
    unreachable
   end
  )
- (func $~lib/array/Array<assembly/BiArc/BiArc>#__visit_impl (; 67 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/array/Array<assembly/BiArc/BiArc>#__visit_impl (; 65 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   local.get $0
@@ -6603,7 +7840,7 @@
    end
   end
  )
- (func $~lib/rt/__visit_members (; 68 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/rt/__visit_members (; 66 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   block $block$4$break
    block $switch$1$default
@@ -6726,7 +7963,7 @@
    call $~lib/rt/pure/__visit
   end
  )
- (func $null (; 69 ;) (type $FUNCSIG$v)
+ (func $null (; 67 ;) (type $FUNCSIG$v)
   nop
  )
 )
