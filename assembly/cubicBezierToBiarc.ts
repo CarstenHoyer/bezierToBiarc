@@ -10,27 +10,29 @@ function isRealInflexionPoint(t: Complex): bool {
 }
 
 export function cubicBezierToBiarc(p: Float64Array, samplingStep: i8, tolerance: f64): BiArc[] {
-  const biarcs = Array.create<BiArc>();
-  const curves = Array.create<CubicBezier>();
+  const biarcs = new Array<BiArc>();
+  const curves = new Array<CubicBezier>();
 
-  let toSplit: CubicBezier = new CubicBezier(p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7]);
+  let toSplit = new CubicBezier(p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7]);
 
   const inflex = toSplit.inflexionPoints();
-  const i1 = isRealInflexionPoint(inflex[0]);
-  const i2 = isRealInflexionPoint(inflex[1]);
+  const inflex0 = unchecked(inflex[0]);
+  const inflex1 = unchecked(inflex[1]);
+  const i1 = isRealInflexionPoint(inflex0);
+  const i2 = isRealInflexionPoint(inflex1);
 
   if (i1 && !i2) {
-    const splited = toSplit.split(inflex[0].re);
-    curves.push(splited[0]);
-    curves.push(splited[1]);
+    const splited = toSplit.split(inflex0.re);
+    curves.push(unchecked(splited[0]));
+    curves.push(unchecked(splited[1]));
   } else if (!i1 && i2) {
-    const splited = toSplit.split(inflex[1].re);
-    curves.push(splited[0]);
-    curves.push(splited[1]);
+    const splited = toSplit.split(inflex1.re);
+    curves.push(unchecked(splited[0]));
+    curves.push(unchecked(splited[1]));
   } else if (i1 && i2) {
 
-    let t1 = inflex[0].re;
-    let t2 = inflex[1].re;
+    let t1 = inflex0.re;
+    let t2 = inflex1.re;
 
     // Make the first split and save the first new curve. The second one has to be splitted again
     // at the recalculated t2 (it is on a new curve)
@@ -39,12 +41,12 @@ export function cubicBezierToBiarc(p: Float64Array, samplingStep: i8, tolerance:
 
     t2 = (1 - t1) * t2;
 
-    toSplit = splited1[1];
+    toSplit = unchecked(splited1[1]);
     const splited2 = toSplit.split(t2);
 
-    curves.push(splited1[0]);
-    curves.push(splited2[0]);
-    curves.push(splited2[1]);
+    curves.push(unchecked(splited1[0]));
+    curves.push(unchecked(splited2[0]));
+    curves.push(unchecked(splited2[1]));
   } else {
     curves.push(toSplit);
   }
@@ -77,8 +79,8 @@ export function cubicBezierToBiarc(p: Float64Array, samplingStep: i8, tolerance:
     let maxDistance = 0.0;
     let maxDistanceAt = 0.0;
 
-    const nrPointsToCheck: f64 = biarc.length() / samplingStep;
-    const parameterStep: f64 = 1.0 / nrPointsToCheck;
+    const nrPointsToCheck = biarc.length() / samplingStep;
+    const parameterStep = 1.0 / nrPointsToCheck;
     const pointsToCheck = nrPointsToCheck as i32;
 
     for (let i = 0; i <= pointsToCheck; ++i) {
@@ -99,8 +101,8 @@ export function cubicBezierToBiarc(p: Float64Array, samplingStep: i8, tolerance:
       // the maximum and try again with the two halfs
       const bs = bezier.split(maxDistanceAt);
 
-      curves.push(bs[0]);
-      curves.push(bs[1]);
+      curves.push(unchecked(bs[0]));
+      curves.push(unchecked(bs[1]));
     } else {
       // Otherwise we are done with the current bezier
       biarcs.push(biarc);

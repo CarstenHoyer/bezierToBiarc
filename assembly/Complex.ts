@@ -45,7 +45,8 @@ export class Complex {
 
     const c = other.re;
     const d = other.im;
-    let t: f64
+
+    let t: f64;
     let x: f64;
 
     if (0 === d) {
@@ -59,8 +60,9 @@ export class Complex {
       t = c * x + d;
 
       return new Complex(
-              (a * x + b) / t,
-              (b * x - a) / t);
+        (a * x + b) / t,
+        (b * x - a) / t
+      );
 
     } else {
 
@@ -68,8 +70,9 @@ export class Complex {
       t = d * x + c;
 
       return new Complex(
-              (a + b * x) / t,
-              (b - a * x) / t);
+        (a + b * x) / t,
+        (b - a * x) / t
+      );
     }
   }
 
@@ -101,32 +104,20 @@ export class Complex {
     return new Complex(re, b < 0 ? -im : im);
   }
 
+  @inline
   abs (): f64 {
     return this.hypot(this.re, this.im);
   }
 
+  @inline
   hypot (x: f64, y: f64): f64 {
-
-    let a = Math.abs(x);
-    let b = Math.abs(y);
-
-    if (a < 3000 && b < 3000) {
-      return Math.sqrt(a * a + b * b);
-    }
-
-    if (a < b) {
-      a = b;
-      b = x / y;
-    } else {
-      b = y / x;
-    }
-    return a * Math.sqrt(1 + b * b);
+    return Math.hypot(x, y);
   }
 
   toArray(): Float64Array {
     const a = new Float64Array(2)
-    a[0] = this.im
-    a[1] = this.re
+    unchecked(a[0] = this.im)
+    unchecked(a[1] = this.re)
     return a
   }
 }

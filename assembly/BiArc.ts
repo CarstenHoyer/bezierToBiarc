@@ -57,12 +57,12 @@ export class BiArc {
     this.A2 = new Arc(C2, r2, startAngle2, sweepAngle2, T, P2, cw);
   }
 
+  @inline
   length(): f64 {
     return this.A1.length() + this.A2.length();
   }
 
-  pointAt(t: f64): Point
-  {
+  pointAt(t: f64): Point {
     const s = this.A1.length() / (this.A1.length() + this.A2.length());
 
     if (t <= s) {
