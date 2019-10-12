@@ -2,7 +2,6 @@ import { BiArc } from './BiArc'
 import { CubicBezier } from './CubicBezier'
 import { Line } from './Line'
 import { Complex } from './Complex'
-import { console } from './console'
 
 @inline
 function isRealInflexionPoint(t: Complex): bool {
