@@ -74,12 +74,13 @@ let mod
       };
 
       sketch.draw = () => {
+        const all = []
         for (let j = 0; j < points.length; j = j + 8) {
           sketch.bezier(points[j + 0], points[j + 1], points[j + 2], points[j + 3], points[j + 4], points[j + 5], points[j + 6], points[j + 7])
         }
         for (let i = 0; i < r.length; i = i + 6) {
           const [startAngle, sweepAngle, x, y, radius, cw] = [r[i], r[i + 1], r[i + 2], r[i + 3], r[i + 4], r[i + 5]]
-          console.log({startAngle, sweepAngle, x, y, radius, cw})
+          all.push(`arc(${x}, ${y}, ${radius * 2}, ${radius * 2}, ${cw ? startAngle : startAngle + sweepAngle}, ${cw ? startAngle + sweepAngle : startAngle})`)
           let width = radius * 2
           sketch.stroke(Math.random() * 255, Math.random() * 125, Math.random() * 255)
           if (!cw) {
@@ -88,6 +89,7 @@ let mod
             sketch.arc(x, y, width, width, startAngle, startAngle + sweepAngle)
           }
         }
+        console.log(all.join('\n'))
       };
     })
 
