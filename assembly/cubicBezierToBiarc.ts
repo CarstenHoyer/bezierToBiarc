@@ -13,8 +13,8 @@ export function cubicBezierToBiarc(
   x1: f64, y1: f64,
   x2: f64, y2: f64,
   x3: f64, y3: f64,
-  samplingStep: i8,
-  tolerance: f64
+  samplingStep: i8 = 5,
+  tolerance: f64 = 1
 ): BiArc[] {
   const biarcs = new Array<BiArc>();
   const curves = new Array<CubicBezier>();

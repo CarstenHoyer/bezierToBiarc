@@ -10,7 +10,7 @@ describe("cubicBezierToBiarc", () => {
     let p5: f64 = 150;
     let p6: f64 = 350;
     let p7: f64 = 350;
-    const biarcs = cubicBezierToBiarc(p0, p1, p2, p3, p4, p5, p6, p7, 5, 1);
+    const biarcs = cubicBezierToBiarc(p0, p1, p2, p3, p4, p5, p6, p7);
 
     expect<i32>(biarcs.length).toBe(16);
 
@@ -53,7 +53,7 @@ describe("cubicBezierToBiarc", () => {
     let p5: f64 = 50;
     let p6: f64 = 100;
     let p7: f64 = 50;
-    const biarcs = cubicBezierToBiarc(p0, p1, p2, p3, p4, p5, p6, p7, 5, 1);
+    const biarcs = cubicBezierToBiarc(p0, p1, p2, p3, p4, p5, p6, p7);
 
     expect<i32>(biarcs.length).toBe(1);
 
