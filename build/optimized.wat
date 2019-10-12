@@ -5845,8 +5845,6 @@
   (local $3 i32)
   (local $4 i32)
   (local $5 f64)
-  (local $6 i32)
-  (local $7 f64)
   local.get $0
   i32.load
   local.tee $3
@@ -5854,29 +5852,21 @@
   f64.abs
   local.set $2
   local.get $0
-  i32.load
+  i32.load offset=4
   local.tee $4
   f64.load offset=24
   f64.abs
   local.set $5
-  local.get $0
-  i32.load offset=4
-  local.tee $6
-  f64.load offset=24
-  f64.abs
-  local.set $7
   local.get $1
   local.get $3
   f64.load offset=8
   local.get $2
   f64.mul
+  local.tee $2
+  local.get $2
   local.get $4
   f64.load offset=8
   local.get $5
-  f64.mul
-  local.get $6
-  f64.load offset=8
-  local.get $7
   f64.mul
   f64.add
   f64.div

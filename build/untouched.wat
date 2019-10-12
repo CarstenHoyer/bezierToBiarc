@@ -7237,6 +7237,8 @@
  (func $assembly/BiArc/BiArc#pointAt (; 65 ;) (type $FUNCSIG$iid) (param $0 i32) (param $1 f64) (result i32)
   (local $2 i32)
   (local $3 f64)
+  (local $4 f64)
+  (local $5 f64)
   local.get $0
   i32.load
   local.set $2
@@ -7248,17 +7250,7 @@
   local.get $3
   f64.abs
   f64.mul
-  local.get $0
-  i32.load
-  local.set $2
-  local.get $2
-  f64.load offset=8
-  local.get $2
-  f64.load offset=24
   local.set $3
-  local.get $3
-  f64.abs
-  f64.mul
   local.get $0
   i32.load offset=4
   local.set $2
@@ -7266,21 +7258,25 @@
   f64.load offset=8
   local.get $2
   f64.load offset=24
-  local.set $3
-  local.get $3
+  local.set $4
+  local.get $4
   f64.abs
   f64.mul
+  local.set $4
+  local.get $3
+  local.get $3
+  local.get $4
   f64.add
   f64.div
-  local.set $3
+  local.set $5
   local.get $1
-  local.get $3
+  local.get $5
   f64.le
   if
    local.get $0
    i32.load
    local.get $1
-   local.get $3
+   local.get $5
    f64.div
    call $assembly/Arc/Arc#pointAt
    return
@@ -7288,10 +7284,10 @@
    local.get $0
    i32.load offset=4
    local.get $1
-   local.get $3
+   local.get $5
    f64.sub
    f64.const 1
-   local.get $3
+   local.get $5
    f64.sub
    f64.div
    call $assembly/Arc/Arc#pointAt

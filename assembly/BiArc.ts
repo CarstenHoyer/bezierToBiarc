@@ -63,8 +63,9 @@ export class BiArc {
   }
 
   pointAt(t: f64): Point {
-    const s = this.A1.length() / (this.A1.length() + this.A2.length());
-
+    const len1 = this.A1.length();
+    const len2 = this.A2.length();
+    const s = len1 / (len1 + len2);
     if (t <= s) {
       return this.A1.pointAt(t / s);
     } else {
