@@ -21,6 +21,12 @@ export class CubicBezier {
     const C = this.P2.sub(this.C2).sub(A).sub(B.scale(2));
       
     const a = new Complex(B.x * C.y - B.y * C.x, 0);
+
+    // Work around for avoiding NaN on t1 and t2.
+    if (a.re === 0 && a.im === 0) {
+      a.re = 0.1
+    }
+
     const b = new Complex(A.x * C.y - A.y * C.x, 0);
     const c = new Complex(A.x * B.y - A.y * B.x, 0);
     
@@ -68,5 +74,18 @@ export class CubicBezier {
       this.C2.x === this.P2.x &&
       this.C2.y === this.P2.y
     )
+  }
+
+  toArray(): Float64Array {
+    const arr = new Float64Array(8)
+    arr[0] = this.P1.x
+    arr[1] = this.P1.y
+    arr[2] = this.C1.x
+    arr[3] = this.C1.y
+    arr[4] = this.C2.x
+    arr[5] = this.C2.y
+    arr[6] = this.P2.x
+    arr[7] = this.P2.y
+    return arr
   }
 }

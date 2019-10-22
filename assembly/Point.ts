@@ -46,4 +46,11 @@ export class Point {
     }
     return new Point(parseFloat(sx), parseFloat(sy));
   }
+
+  toArray(): Float64Array {
+    const arr = new Float64Array(2)
+    arr[0] = this.x
+    arr[1] = this.y
+    return arr
+  }
 }
