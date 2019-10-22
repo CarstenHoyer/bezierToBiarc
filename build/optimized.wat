@@ -3522,7 +3522,23 @@
   f64.sub
   f64.const 0
   call $assembly/Complex/Complex#constructor
-  local.set $5
+  local.tee $4
+  f64.load
+  f64.const 0
+  f64.eq
+  if (result i32)
+   local.get $4
+   f64.load offset=8
+   f64.const 0
+   f64.eq
+  else   
+   i32.const 0
+  end
+  if
+   local.get $4
+   f64.const 0.1
+   f64.store
+  end
   local.get $1
   f64.load
   local.get $3
@@ -3536,7 +3552,7 @@
   f64.sub
   f64.const 0
   call $assembly/Complex/Complex#constructor
-  local.set $4
+  local.set $5
   local.get $1
   f64.load
   local.get $2
@@ -3551,19 +3567,19 @@
   f64.const 0
   call $assembly/Complex/Complex#constructor
   local.set $9
-  local.get $4
+  local.get $5
   f64.load
   f64.neg
-  local.get $4
+  local.get $5
   f64.load offset=8
   f64.neg
   call $assembly/Complex/Complex#constructor
   local.set $0
-  local.get $4
-  local.get $4
+  local.get $5
+  local.get $5
   call $assembly/Complex/Complex#mul
   local.tee $16
-  local.get $5
+  local.get $4
   local.get $9
   call $assembly/Complex/Complex#mul
   local.tee $17
@@ -3574,7 +3590,7 @@
   local.tee $19
   call $assembly/Complex/Complex#sqrt
   local.set $6
-  local.get $5
+  local.get $4
   f64.const 2
   call $assembly/Complex/Complex#scale
   local.set $7
@@ -3622,9 +3638,9 @@
   call $~lib/rt/pure/__release
   local.get $3
   call $~lib/rt/pure/__release
-  local.get $5
-  call $~lib/rt/pure/__release
   local.get $4
+  call $~lib/rt/pure/__release
+  local.get $5
   call $~lib/rt/pure/__release
   local.get $9
   call $~lib/rt/pure/__release
