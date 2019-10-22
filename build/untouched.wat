@@ -4357,6 +4357,23 @@
   f64.const 0
   call $assembly/Complex/Complex#constructor
   local.set $8
+  local.get $8
+  f64.load
+  f64.const 0
+  f64.eq
+  if (result i32)
+   local.get $8
+   f64.load offset=8
+   f64.const 0
+   f64.eq
+  else   
+   i32.const 0
+  end
+  if
+   local.get $8
+   f64.const 0.1
+   f64.store
+  end
   i32.const 0
   local.get $1
   f64.load

@@ -60,4 +60,12 @@ export class Line {
       return (p2.y - p1.y) / (p2.x - p1.x);
     }
   }
+
+  toArray(): Float64Array {
+    const arr = new Float64Array(3)
+    arr[0] = this.P.x
+    arr[1] = this.P.y
+    arr[2] = this.m
+    return arr
+  }
 }

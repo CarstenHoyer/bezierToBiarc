@@ -67,7 +67,7 @@ export function cubicBezierToBiarc(p: Float64Array, samplingStep: i8, tolerance:
     
     // ---------------------------------------------------------------------------
     // Calculate the BiArc
-    
+
     const biarc = new BiArc(bezier.P1, bezier.P1.sub(bezier.C1), bezier.P2, bezier.P2.sub(bezier.C2), G);
     // ---------------------------------------------------------------------------
     // Calculate the maximum error

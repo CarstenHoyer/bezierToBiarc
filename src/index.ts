@@ -30,8 +30,8 @@ let mod
 
     let curves = []
     for (let i = 0; i < 1; i = i + 2) {
-      curves.push(10, 100, 23, 50, 20, 90, 100, 100)
-      //curves.push(50, 100, 50, 72.38576251, 72.38576251, 50, 100, 50)
+      // curves.push(10, 100, 23, 50, 20, 90, 100, 100)
+      curves.push(50, 100, 50, 72.38576251, 72.38576251, 50, 100, 50)
       // curves.push(100, 100, 100, 100, 200, 100, 200, 100)
       // curves.push(200, 100, 200, 100, 200, 200, 200, 200)
       // curves.push(50 + i, 100 + i, 250 + i, 150 + i, 50 + i, 50 + i, 100 + i, 200 + i)
@@ -45,6 +45,8 @@ let mod
       // curves.push(233.89831 + i, 285.0169000000001 + i, 233.89831 + i, 293.0169000000001 + i, 230.5649766666668 + i, 301.0169000000001 + i, 223.89831 + i, 309.0169000000001 + i)
       // curves.push(204.89831 + i, 328.0169 + i, 198.89831 + i, 334.0169 + i, 191.2316433333334 + i, 337.0169 + i, 181.89831 + i, 337.0169 + i)
       // curves.push(199 + i, 135 + i, 199 + i, 134 + i, 210 + i, 134 + i, 211 + i, 134 + i)
+      curves.push(85, 370, 10, 360, 90, 440, 15, 430)
+      // curves.push(85, 1370, 10, 1360, 90, 1440, 15, 1430)
     }
 
     const points = new Float64Array(curves.length);
@@ -66,7 +68,7 @@ let mod
 
     new p5((sketch) => {
       sketch.setup = () => {
-        sketch.createCanvas(1024, 768).parent('frame')
+        sketch.createCanvas(1024, 1768).parent('frame')
         sketch.background(255)
         sketch.noFill()
         sketch.noLoop()
@@ -75,9 +77,12 @@ let mod
 
       sketch.draw = () => {
         const all = []
+        sketch.push()
         for (let j = 0; j < points.length; j = j + 8) {
+          sketch.stroke(255, 0, 0)
           sketch.bezier(points[j + 0], points[j + 1], points[j + 2], points[j + 3], points[j + 4], points[j + 5], points[j + 6], points[j + 7])
         }
+        sketch.pop()
         for (let i = 0; i < r.length; i = i + 6) {
           const [startAngle, sweepAngle, x, y, radius, cw] = [r[i], r[i + 1], r[i + 2], r[i + 3], r[i + 4], r[i + 5]]
           all.push(`arc(${x}, ${y}, ${radius * 2}, ${radius * 2}, ${cw ? startAngle : startAngle + sweepAngle}, ${cw ? startAngle + sweepAngle : startAngle})`)
