@@ -4339,6 +4339,25 @@
   local.get $2
   f64.ne
   if (result i32)
+   local.get $1
+   f64.load offset=8
+   local.tee $2
+   local.get $2
+   f64.ne
+  else   
+   i32.const 0
+  end
+  if
+   local.get $0
+   f64.const 2e8
+   f64.store offset=8
+  end
+  local.get $0
+  f64.load offset=8
+  local.tee $2
+  local.get $2
+  f64.ne
+  if (result i32)
    local.get $0
    local.get $1
    call $assembly/Line/Line.verticalIntersection

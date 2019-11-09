@@ -5303,6 +5303,21 @@
   local.get $0
   f64.load offset=8
   call $~lib/number/isNaN<f64>
+  if (result i32)
+   local.get $1
+   f64.load offset=8
+   call $~lib/number/isNaN<f64>
+  else   
+   i32.const 0
+  end
+  if
+   local.get $0
+   f64.const 2e8
+   f64.store offset=8
+  end
+  local.get $0
+  f64.load offset=8
+  call $~lib/number/isNaN<f64>
   if
    local.get $0
    local.get $1
