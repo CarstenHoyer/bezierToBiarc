@@ -15,6 +15,11 @@ export class Line {
   }
 
   intersection(other: Line): Point {
+    // Workaround - instead of handling two parallel tangents,
+    // we give one of them a very steep slope.
+    if (isNaN(this.m) && isNaN(other.m)) {
+      this.m = 200000000.0
+    }
     if (isNaN(this.m)) {
       return Line.verticalIntersection(this, other);
     }
