@@ -20,6 +20,10 @@ export class Line {
     if (isNaN(this.m) && isNaN(other.m)) {
       this.m = 200000000.0
     }
+    if (this.m === 0 && other.m === 0) {
+      this.m = 0.000001
+    }
+
     if (isNaN(this.m)) {
       return Line.verticalIntersection(this, other);
     }
