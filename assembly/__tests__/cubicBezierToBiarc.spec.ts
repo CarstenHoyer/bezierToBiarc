@@ -12,7 +12,7 @@ describe("cubicBezierToBiarc", () => {
     points[6] = 350;
     points[7] = 350;
     const biarcs = cubicBezierToBiarc(points, 5, 1);
-    
+
     expect<i32>(biarcs.length).toBe(16);
 
     expect<f64>(biarcs[0].A1.startAngle).toBeCloseTo(0.5205896);
@@ -28,13 +28,13 @@ describe("cubicBezierToBiarc", () => {
     expect<f64>(biarcs[0].A2.C.y).toBeCloseTo(178.49243);
     expect<f64>(biarcs[0].A2.r).toBeCloseTo(285.845949);
     expect<f64>(biarcs[0].A2.cw ? 1 : 0).toBeCloseTo(1);
-    
+
     expect<f64>(biarcs[15].A1.startAngle).toBeCloseTo(-3.01723);
     expect<f64>(biarcs[15].A1.sweepAngle).toBeCloseTo(0.04460);
     expect<f64>(biarcs[15].A1.C.x).toBeCloseTo(763.165415);
     expect<f64>(biarcs[15].A1.C.y).toBeCloseTo(582.89567);
     expect<f64>(biarcs[15].A1.r).toBeCloseTo(668.32631);
-    expect<f64>(biarcs[15].A1.cw ? 1: 0).toBeCloseTo(1);
+    expect<f64>(biarcs[15].A1.cw ? 1 : 0).toBeCloseTo(1);
 
     expect<f64>(biarcs[15].A2.startAngle).toBeCloseTo(-2.97263);
     expect<f64>(biarcs[15].A2.sweepAngle).toBeCloseTo(0.047456);
@@ -71,7 +71,7 @@ describe("cubicBezierToBiarc", () => {
     expect<f64>(biarcs[0].A2.C.y).toBeCloseTo(100);
     expect<f64>(biarcs[0].A2.r).toBeCloseTo(50);
     expect<f64>(biarcs[0].A2.cw ? 1 : 0).toBeCloseTo(1);
-    
+
     // expect<f64>(biarcs[15].A1.startAngle).toBeCloseTo(-3.01723);
     // expect<f64>(biarcs[15].A1.sweepAngle).toBeCloseTo(0.04460);
     // expect<f64>(biarcs[15].A1.C.x).toBeCloseTo(763.165415);
@@ -114,13 +114,13 @@ describe("cubicBezierToBiarc", () => {
     expect<f64>(biarcs[0].A2.C.y).toBeCloseTo(1322.5690110);
     expect<f64>(biarcs[0].A2.r).toBeCloseTo(108.3817241);
     expect<f64>(biarcs[0].A2.cw ? 1 : 0).toBeCloseTo(1);
-    
+
     expect<f64>(biarcs[7].A1.startAngle).toBeCloseTo(-1.4382447944);
     expect<f64>(biarcs[7].A1.sweepAngle).toBeCloseTo(-0.059867990);
     expect<f64>(biarcs[7].A1.C.x).toBeCloseTo(70.2907062);
     expect<f64>(biarcs[7].A1.C.y).toBeCloseTo(1480.3197032);
     expect<f64>(biarcs[7].A1.r).toBeCloseTo(111.29600285);
-    expect<f64>(biarcs[7].A1.cw ? 1: 0).toBeCloseTo(0);
+    expect<f64>(biarcs[7].A1.cw ? 1 : 0).toBeCloseTo(0);
 
     expect<f64>(biarcs[7].A2.startAngle).toBeCloseTo(-1.498112785);
     expect<f64>(biarcs[7].A2.sweepAngle).toBeCloseTo(-0.07552416);
