@@ -23,7 +23,12 @@ module.exports = {
   /**
    * Add your required AssemblyScript imports here.
    */
-  imports: {},
+  imports: {
+    console: {
+      "console.logs": ptr => {},
+      "console.log64a": ptr => {}
+    }
+  },
   /**
    * All performance statistics reporting can be configured here.
    */
@@ -43,7 +48,7 @@ module.exports = {
     /** Report the maximum run time in milliseconds for every test. */
     reportMax: false,
     /** Report the minimum run time in milliseconds for every test. */
-    reportMin: false,
+    reportMin: false
   },
   /**
    * Add a custom reporter here if you want one. The following example is in typescript.
@@ -65,5 +70,5 @@ module.exports = {
   /**
    * Specify if the binary wasm file should be written to the file system.
    */
-  outputBinary: false,
+  outputBinary: false
 };
